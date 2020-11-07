@@ -42,6 +42,45 @@
     
     
         
+            <!-- MathJax配置，可通过单美元符号书写行内公式等 -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+    "HTML-CSS": {
+        preferredFont: "TeX",
+        availableFonts: ["STIX","TeX"],
+        linebreaks: { automatic:true },
+        EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50)
+    },
+    tex2jax: {
+        inlineMath: [ ["$", "$"], ["\\(","\\)"] ],
+        processEscapes: true,
+        ignoreClass: "tex2jax_ignore|dno",
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+        equationNumbers: { autoNumber: "AMS" },
+        noUndefined: { attributes: { mathcolor: "red", mathbackground: "#FFEEEE", mathsize: "90%" } },
+        Macros: { href: "{}" }
+    },
+    messageStyle: "none"
+    });
+</script>
+<!-- 给MathJax元素添加has-jax class -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+<!-- 通过连接CDN加载MathJax的js代码 -->
+<script type="text/javascript" async
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+
+
+        
     
 
 
@@ -264,9 +303,18 @@
 <p><img src="pictures/111111.jpg" alt="我是图片"></p>
 <p>(2)参数式</p>
 <p>这是<img src="public/image/111111.jpg" alt="我是图片"></p>
+<img class="public&#x2F;image&#x2F;111111.jpg [width] [height] &quot;alt text&quot; &quot;title text&quot;">
+
+
+
+<img src="https://yingchinlin.github.io/img/111111.jpg" class="" title="[width] [height] " alt="alt text">
+
+
 <h1 id="（七）代码框（3种；至少要3个符号，但不要求连续）"><a href="#（七）代码框（3种；至少要3个符号，但不要求连续）" class="headerlink" title="（七）代码框（3种；至少要3个符号，但不要求连续）"></a>（七）代码框（3种；至少要3个符号，但不要求连续）</h1><p>单行用代码框(1个反引号)<br><code>&lt;p&gt;&lt;a href=&quot;/home&quot; title=&quot;说明&quot;&gt;单行代码用单反引号&lt;/a&gt;&lt;/p&gt;</code></p>
 <p>多行用代码框(3个反引号)</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;p&gt;&lt;a href&#x3D;&quot;&#x2F;home&quot; title&#x3D;&quot;说明&quot;&gt;单行代码用单反引号&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;</span><br><span class="line">&lt;p&gt;&lt;a href&#x3D;&quot;&#x2F;home&quot; title&#x3D;&quot;说明&quot;&gt;单行代码用单反引号&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;</span><br><span class="line">&lt;p&gt;&lt;a href&#x3D;&quot;&#x2F;home&quot; title&#x3D;&quot;说明&quot;&gt;单行代码用单反引号&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"/home"</span> <span class="attr">title</span>=<span class="string">"说明"</span>&gt;</span>单行代码用单反引号<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"/home"</span> <span class="attr">title</span>=<span class="string">"说明"</span>&gt;</span>单行代码用单反引号<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"/home"</span> <span class="attr">title</span>=<span class="string">"说明"</span>&gt;</span>单行代码用单反引号<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
 <p>如果不用代码框框上HTML代码</p>
 <table>
@@ -343,12 +391,24 @@
 <li>+</li>
 <li>.</li>
 <li>\！</li>
+<li>{}</li>
+<li>[]</li>
+<li>()</li>
+<li>#</li>
 </ul>
 <h1 id="（十一）删除线"><a href="#（十一）删除线" class="headerlink" title="（十一）删除线"></a>（十一）删除线</h1><p><del>删除这段文字</del></p>
 <h1 id="（十二）空格"><a href="#（十二）空格" class="headerlink" title="（十二）空格"></a>（十二）空格</h1><p>&nbsp;</p>
 <h1 id="（十四）下划线"><a href="#（十四）下划线" class="headerlink" title="（十四）下划线"></a>（十四）下划线</h1><p><u>下划线</u></p>
-<p>​</p>
+<p>1<br><img src="http://qzonestyle.gtimg.cn/qzone/qzactStatics/imgs/20171122191630_ff8fef.jpg" alt="Markdown tutorial" title="Pretty"></p>
+<p><a href="https://yingchinlin.github.io/img/111111.jpg" title="Pretty">Markdown tutorial</a></p>
+<p>// You can import image in this way to enable image-title.</p>
+<img src="/path/to/image" class="[class names]" title="[width] [height] " alt="alt text">
 
+<p>// this is a example of image below.</p>
+<img src="http://qzonestyle.gtimg.cn/qzone/qzactStatics/imgs/20171122191630_ff8fef.jpg" class="" title="picture 404! This is a pic for test">
+
+
+<img class="">
         </div>
 
         
