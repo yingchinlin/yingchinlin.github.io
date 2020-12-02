@@ -14,7 +14,7 @@
 
 
 
-<title>谈谈写文章的心得 | YingchinLin&#39;s Blog</title>
+<title>集合与函数概念 | YingchinLin&#39;s Blog</title>
 
 
 
@@ -110,11 +110,73 @@
             <div class="container">
     
     
+        <div class="post-toc">
+    <div class="tocbot-list">
+    </div>
+    <div class="tocbot-list-menu">
+        <a class="tocbot-toc-expand" onclick="expand_toc()">Expand all</a>
+        <a onclick="go_top()">Back to top</a>
+        <a onclick="go_bottom()">Go to bottom</a>
+    </div>
+</div>
+
+<script>
+    document.ready(
+        function () {
+            tocbot.init({
+                tocSelector: '.tocbot-list',
+                contentSelector: '.post-content',
+                headingSelector: 'h1, h2, h3, h4, h5',
+                collapseDepth: 1,
+                orderedList: false,
+                scrollSmooth: true,
+            })
+        }
+    )
+
+    function expand_toc() {
+        var b = document.querySelector(".tocbot-toc-expand");
+        tocbot.init({
+            tocSelector: '.tocbot-list',
+            contentSelector: '.post-content',
+            headingSelector: 'h1, h2, h3, h4, h5',
+            collapseDepth: 6,
+            orderedList: false,
+            scrollSmooth: true,
+        });
+        b.setAttribute("onclick", "collapse_toc()");
+        b.innerHTML = "Collapse all"
+    }
+
+    function collapse_toc() {
+        var b = document.querySelector(".tocbot-toc-expand");
+        tocbot.init({
+            tocSelector: '.tocbot-list',
+            contentSelector: '.post-content',
+            headingSelector: 'h1, h2, h3, h4, h5',
+            collapseDepth: 1,
+            orderedList: false,
+            scrollSmooth: true,
+        });
+        b.setAttribute("onclick", "expand_toc()");
+        b.innerHTML = "Expand all"
+    }
+
+    function go_top() {
+        window.scrollTo(0, 0);
+    }
+
+    function go_bottom() {
+        window.scrollTo(0, document.body.scrollHeight);
+    }
+
+</script>
+    
 
     
     <article class="post-wrap">
         <header class="post-header">
-            <h1 class="post-title">谈谈写文章的心得</h1>
+            <h1 class="post-title">集合与函数概念</h1>
             
                 <div class="post-meta">
                     
@@ -123,14 +185,14 @@
 
                     
                         <span class="post-time">
-                        Date: <a href="#">2020-11-5&nbsp;&nbsp;20:00:16</a>
+                        Date: <a href="#">2020-11-12&nbsp;&nbsp;08:07:08</a>
                         </span>
                     
                     
                         <span class="post-category">
                     Category:
                             
-                                <a href="/categories/%E5%AD%A6%E4%B9%A0/">学习</a>
+                                <a href="/categories/%E7%AC%94%E8%AE%B0/">笔记</a>
                             
                         </span>
                     
@@ -139,16 +201,19 @@
         </header>
 
         <div class="post-content">
-            <p>最近，写作练习增多，有几点体会感觉值得记下：</p>
-<p>第一，写文章本身是指出问题，其目的是为了解决问题。</p>
-<p>第二，写文章既是指出问题，那么必然涉及与读者的沟通互动。为了使读者能通过文章准确把握作者的观点，并对作者观点和论证进行评估，那么写作者在作文时就要注意两点：其一是必须使自己的文章简洁明白、逻辑清晰缜密，让自己的文章容易理解；其二是必须尽可能地考虑读者受众的背景，使自己文章不脱离他们的理解范围。</p>
-<p>第三，写文章的目的是解决问题，那么必然与现实情况相关。因此，有两点要注意，其一是描述现实的用词要准确清晰，使语言与现实相吻合；其二是文章叙述的用句要简洁完整，前后行文要脉络清晰；其三是文章的理论和论证要力求真实简洁，要力求反映现实的真实情况。</p>
-<p>第四，写文章要发自内心，直抒胸怀。既然愿意花费心血来写文章讨论，那么必然是这个问题触动了作者，此时写文章就该情真意切、真实坦诚地表露自己的观点，再使用晦涩难懂、模棱两可的语言就不合适了。</p>
-<p>第五，总的来说，我写文章就要力求简洁严谨、淳朴自然、坦诚实在的风格。</p>
-<p>我并不是要倡导什么文风，而是记录下适合自己的。</p>
-<p>切记，不是人随文风，而是文风随人。</p>
-<p>（二零二零年十一月七日写）</p>
-
+            <blockquote>
+<p>数学</p>
+</blockquote>
+<h2 id="1、集合"><a href="#1、集合" class="headerlink" title="1、集合"></a>1、集合</h2><p>元素的含义与表示</p>
+<p>研究对象统称为元素element</p>
+<p>一些元素组成的总体叫作集合set</p>
+<p>集合的特徵：</p>
+<ul>
+<li>确定性</li>
+<li>互异性</li>
+<li>无序性</li>
+</ul>
+<h2 id="2、函数及其表示"><a href="#2、函数及其表示" class="headerlink" title="2、函数及其表示"></a>2、函数及其表示</h2><h2 id="3、函数的基本性质"><a href="#3、函数的基本性质" class="headerlink" title="3、函数的基本性质"></a>3、函数的基本性质</h2>
         </div>
 
         
@@ -176,7 +241,7 @@
                 <span class="tag">
                     
                     
-                        <a href="/tags/%E5%86%99%E4%BD%9C/"># 写作</a>
+                        <a href="/tags/%E6%95%B0%E5%AD%A6/"># 数学</a>
                     
                         
                 </span>
@@ -189,10 +254,10 @@
         </section>
         <section class="post-nav">
             
-                <a class="prev" rel="prev" href="/2020/11/12/%E9%AB%98%E4%B8%AD%E6%95%B0%E5%AD%A6/%E9%9B%86%E5%90%88/">集合与函数概念</a>
+                <a class="prev" rel="prev" href="/2020/11/12/text2/">text2</a>
             
             
-            <a class="next" rel="next" href="/2020/11/03/%E7%94%9F%E6%B4%BB/04%E7%99%BE%E4%BA%8C%E4%B8%98%E7%94%B0%E6%B8%B8%E8%AE%B0/">百二丘田游记</a>
+            <a class="next" rel="next" href="/2020/11/05/06%E8%B0%88%E8%B0%88%E5%86%99%E6%96%87%E7%AB%A0%E7%9A%84%E5%BF%83%E5%BE%97/">谈谈写文章的心得</a>
             
         </section>
 
