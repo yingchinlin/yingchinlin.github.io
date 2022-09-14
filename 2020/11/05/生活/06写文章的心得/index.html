@@ -15,7 +15,7 @@
 
 
 
-<title>Hello World | WilkinLim&#39;s Blog</title>
+<title>写文章的心得 | WilkinLim&#39;s Blog</title>
 
 
 
@@ -129,76 +129,11 @@
                 <div class="container">
     
     
-        <div class="post-toc">
-    <div class="tocbot-list">
-    </div>
-    <div class="tocbot-list-menu">
-        <a class="tocbot-toc-expand" onclick="expand_toc()">Expand all</a>
-        <a onclick="go_top()">Back to top</a>
-        <a onclick="go_bottom()">Go to bottom</a>
-    </div>
-</div>
-
-<script>
-    var tocbot_timer;
-    var DEPTH_MAX = 6; // 为 6 时展开所有
-    var tocbot_default_config = {
-        tocSelector: '.tocbot-list',
-        contentSelector: '.post-content',
-        headingSelector: 'h1, h2, h3, h4, h5',
-        orderedList: false,
-        scrollSmooth: true,
-        onClick: extend_click,
-    };
-
-    function extend_click() {
-        clearTimeout(tocbot_timer);
-        tocbot_timer = setTimeout(function() {
-            tocbot.refresh(obj_merge(tocbot_default_config, {
-                hasInnerContainers: true
-            }));
-        }, 420); // 这个值是由 tocbot 源码里定义的 scrollSmoothDuration 得来的
-    }
-
-    document.ready(function() {
-        tocbot.init(obj_merge(tocbot_default_config, {
-            collapseDepth: 1
-        }));
-    });
-
-    function expand_toc() {
-        var b = document.querySelector('.tocbot-toc-expand');
-        var expanded = b.getAttribute('data-expanded');
-        expanded ? b.removeAttribute('data-expanded') : b.setAttribute('data-expanded', true);
-        tocbot.refresh(obj_merge(tocbot_default_config, {
-            collapseDepth: expanded ? 1 : DEPTH_MAX
-        }));
-        b.innerText = expanded ? 'Expand all' : 'Collapse all';
-    }
-
-    function go_top() {
-        window.scrollTo(0, 0);
-    }
-
-    function go_bottom() {
-        window.scrollTo(0, document.body.scrollHeight);
-    }
-
-    function obj_merge(target, source) {
-        for (var item in source) {
-            if (source.hasOwnProperty(item)) {
-                target[item] = source[item];
-            }
-        }
-        return target;
-    }
-</script>
-    
 
     
     <article class="post-wrap">
         <header class="post-header">
-            <h1 class="post-title">Hello World</h1>
+            <h1 class="post-title">写文章的心得</h1>
             
                 <div class="post-meta">
                     
@@ -207,28 +142,29 @@
 
                     
                         <span class="post-time">
-                        Date: <a href="#">九月 14, 2022&nbsp;&nbsp;15:27:13</a>
+                        Date: <a href="#">十一月 5, 2020&nbsp;&nbsp;20:00:16</a>
                         </span>
                     
+                    
+                        <span class="post-category">
+                    Category:
+                            
+                                <a href="/categories/%E5%AD%A6%E4%B9%A0/">学习</a>
+                            
+                        </span>
                     
                 </div>
             
         </header>
 
         <div class="post-content">
-            <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+            <p>最近，写作练习增多，有几点体会感觉值得记下：</p>
+<p>第一，写文章本身是指出问题，其目的是为了解决问题。</p>
+<p>第二，写文章既是指出问题，那么必然涉及与读者的沟通互动。为了使读者能通过文章准确把握作者的观点，并对作者观点和论证进行评估，那么写作者在作文时就要注意两点：其一是必须使自己的文章简洁明白、逻辑清晰缜密，让自己的文章容易理解；其二是必须尽可能地考虑读者受众的背景，使自己文章不脱离他们的理解范围。</p>
+<p>第三，写文章的目的是解决问题，那么必然与现实情况相关。因此，有两点要注意，其一是描述现实的用词要准确清晰，使语言与现实相吻合；其二是文章叙述的用句要简洁完整，前后行文要脉络清晰；其三是文章的理论和论证要力求真实简洁，要力求反映现实的真实情况。</p>
+<p>第四，写文章要发自内心，直抒胸怀。既然愿意花费心血来写文章讨论，那么必然是这个问题触动了作者，此时写文章就该情真意切、真实坦诚地表露自己的观点，再使用晦涩难懂、模棱两可的语言就不合适了。</p>
+<p>第五，总的来说，我写文章就要力求简洁严谨、淳朴自然、坦诚实在的风格。</p>
+<p>写于二零二零年十一月七日</p>
 
         </div>
 
@@ -243,7 +179,7 @@
                 
                     <p class="copyright-item">
                         <span>Permalink:</span>
-                        <span><a href="https://yingchinlin.github.io/2022/09/14/hello-world/">https://yingchinlin.github.io/2022/09/14/hello-world/</a></span>
+                        <span><a href="https://yingchinlin.github.io/2020/11/05/%E7%94%9F%E6%B4%BB/06%E5%86%99%E6%96%87%E7%AB%A0%E7%9A%84%E5%BF%83%E5%BE%97/">https://yingchinlin.github.io/2020/11/05/%E7%94%9F%E6%B4%BB/06%E5%86%99%E6%96%87%E7%AB%A0%E7%9A%84%E5%BF%83%E5%BE%97/</a></span>
                     </p>
                 
                 
@@ -266,6 +202,10 @@
                 <span>Tag(s):</span>
                 <span class="tag">
                     
+                    
+                        <a href="/tags/%E5%86%99%E4%BD%9C/"># 写作</a>
+                    
+                        
                 </span>
             </div>
             <div>
@@ -276,8 +216,10 @@
         </section>
         <section class="post-nav">
             
+                <a class="prev" rel="prev" href="/2020/11/12/03%E9%AB%98%E4%B8%AD%E6%95%B0%E5%AD%A6/%E9%9B%86%E5%90%88/">集合与函数概念</a>
             
-            <a class="next" rel="next" href="/2021/02/06/%E5%85%94%E7%BA%B8%E5%92%8C%E4%BB%96%E7%9A%84%E5%AD%A6%E7%94%9F/">兔子和他的学生们</a>
+            
+            <a class="next" rel="next" href="/2020/11/03/%E7%94%9F%E6%B4%BB/04%E7%99%BE%E4%BA%8C%E4%B8%98%E7%94%B0%E6%B8%B8%E8%AE%B0/">百二丘田游记</a>
             
         </section>
 
