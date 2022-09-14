@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
 <meta name="viewport"
@@ -16,7 +17,7 @@
 
 
 
-    <link rel="icon" href="/myfavicon.ico">
+    <link rel="icon" href="/favicon.ico">
 
 
 
@@ -44,12 +45,31 @@
 
 
 <meta name="generator" content="Hexo 6.3.0"></head>
+
 <body>
+    <script>
+        // this function is used to check current theme before page loaded.
+        (() => {
+            const currentTheme = window.localStorage && window.localStorage.getItem('theme') || '';
+            const isDark = currentTheme === 'dark';
+            const pagebody = document.getElementsByTagName('body')[0]
+            if (isDark) {
+                pagebody.classList.add('dark-theme');
+                // mobile
+                document.getElementById("mobile-toggle-theme").innerText = "· Dark"
+            } else {
+                pagebody.classList.remove('dark-theme');
+                // mobile
+                document.getElementById("mobile-toggle-theme").innerText = "· Light"
+            }
+        })();
+    </script>
+
     <div class="wrapper">
         <header>
     <nav class="navbar">
         <div class="container">
-            <div class="navbar-header header-logo"><a href="/">Yingchin Lin&#39;s Blog</a></div>
+            <div class="navbar-header header-logo"><a href="/">Bentham&#39;s Blog</a></div>
             <div class="menu navbar-right">
                 
                     <a class="menu-item" href="/archives">Posts</a>
@@ -63,7 +83,6 @@
                 <input id="switch_default" type="checkbox" class="switch_default">
                 <label for="switch_default" class="toggleBtn"></label>
             </div>
-
         </div>
     </nav>
 
@@ -72,7 +91,7 @@
         <div class="container">
             <div class="navbar-header">
                 <div>
-                    <a href="/">Yingchin Lin&#39;s Blog</a><a id="mobile-toggle-theme">·&nbsp;Light</a>
+                    <a href="/">Bentham&#39;s Blog</a><a id="mobile-toggle-theme">·&nbsp;Light</a>
                 </div>
                 <div class="menu-toggle" onclick="mobileBtn()">&#9776; Menu</div>
             </div>
@@ -104,15 +123,15 @@
         }
     }
 </script>
-        <div class="main">
-            
-    <div class="container">
+            <div class="main">
+                
+    <div class="container profile-container">
     <div class="intro">
         <div class="avatar">
-            <a href="/archives"><img src="/image/avatar.jpg"></a>
+            <a href="/archives"><img src="/image/avatar.jpeg"></a>
         </div>
-        <div class="nickname">Yingchin Lin</div>
-        <div class="description"><p>厚德载物，自强不息。</p>
+        <div class="nickname">Jeremy Bentham</div>
+        <div class="description"><p>Lorem ipsum dolor sit amet, <strong>consectetur adipiscing elit.</strong> <br>Fusce eget urna vitae velit <em>eleifend interdum at ac</em> nisi.</p>
 </div>
         <div class="links">
             
@@ -124,24 +143,31 @@
                         
                     </a>
                 
-                    <a class="link-item" title="Resume" href="/RESUME.html">
-                        
-                        
-                            <i class="iconfont icon-resume"></i>
-                        
-                    </a>
-                
-                    <a class="link-item" title="ZhiHu" target="_blank" rel="noopener" href="https://www.zhihu.com/people/yingchin_lin">
+                    <a class="link-item" title="ZhiHu" target="_blank" rel="noopener" href="https://www.zhihu.com/people/sirice">
                         
                         
                             <i class="iconfont icon-zhihu"></i>
                         
                     </a>
                 
-                    <a class="link-item" title="WeChat" target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s/3Aep8CMQ0XWomLjkK8Yl8A">
+                    <a class="link-item" title="Instagram" href="">
                         
                         
-                            <i class="iconfont icon-wechat"></i>
+                            <i class="iconfont icon-instagram"></i>
+                        
+                    </a>
+                
+                    <a class="link-item" title="Reddit" href="">
+                        
+                        
+                            <i class="iconfont icon-reddit"></i>
+                        
+                    </a>
+                
+                    <a class="link-item" title="Github" target="_blank" rel="noopener" href="https://github.com/Siricee">
+                        
+                        
+                            <i class="iconfont icon-github"></i>
                         
                     </a>
                 
@@ -151,13 +177,14 @@
 </div>
 
 
-        </div>
-        <footer id="footer" class="footer">
+            </div>
+            <footer id="footer" class="footer">
     <div class="copyright">
-        <span>© 2020 John Doe 版权所有 | Powered by <a href="https://hexo.io" target="_blank">Hexo</a> & <a href="https://github.com/Siricee/hexo-theme-Chic" target="_blank">Chic</a></span>
+        <span>© John Doe | Powered by <a href="https://hexo.io" target="_blank">Hexo</a> & <a href="https://github.com/Siricee/hexo-theme-Chic" target="_blank">Chic</a></span>
     </div>
 </footer>
 
     </div>
 </body>
+
 </html>
