@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="zh_cn">
+
+<head>
+    <meta charset="UTF-8">
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <meta name="author" content="Wilkin Lim">
+
+
+
+    <meta name="description" content="https://yingchinlin.github.io">
+
+
+
+<title>香港历史博物馆游记 | WilkinLim&#39;s Blog</title>
+
+
+
+    <link rel="icon" href="/myfavicon.png">
+
+
+
+
+    <!-- stylesheets list from _config.yml -->
+    
+    <link rel="stylesheet" href="/css/style.css">
+    
+
+
+
+    <!-- scripts list from _config.yml -->
+    
+    <script src="/js/script.js"></script>
+    
+    <script src="/js/tocbot.min.js"></script>
+    
+
+
+
+    
+    
+        
+    
+
+
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body>
+    <script>
+        // this function is used to check current theme before page loaded.
+        (() => {
+            const currentTheme = window.localStorage && window.localStorage.getItem('theme') || '';
+            const isDark = currentTheme === 'dark';
+            const pagebody = document.getElementsByTagName('body')[0]
+            if (isDark) {
+                pagebody.classList.add('dark-theme');
+                // mobile
+                document.getElementById("mobile-toggle-theme").innerText = "· Dark"
+            } else {
+                pagebody.classList.remove('dark-theme');
+                // mobile
+                document.getElementById("mobile-toggle-theme").innerText = "· Light"
+            }
+        })();
+    </script>
+
+    <div class="wrapper">
+        <header>
+    <nav class="navbar">
+        <div class="container">
+            <div class="navbar-header header-logo"><a href="/">Wilkin Lim&#39;s Blog</a></div>
+            <div class="menu navbar-right">
+                
+                    <a class="menu-item" href="/archives">Posts</a>
+                
+                    <a class="menu-item" href="/category">Categories</a>
+                
+                    <a class="menu-item" href="/tag">Tags</a>
+                
+                    <a class="menu-item" href="/about">About</a>
+                
+                <input id="switch_default" type="checkbox" class="switch_default">
+                <label for="switch_default" class="toggleBtn"></label>
+            </div>
+        </div>
+    </nav>
+
+    
+    <nav class="navbar-mobile" id="nav-mobile">
+        <div class="container">
+            <div class="navbar-header">
+                <div>
+                    <a href="/">Wilkin Lim&#39;s Blog</a><a id="mobile-toggle-theme">·&nbsp;Light</a>
+                </div>
+                <div class="menu-toggle" onclick="mobileBtn()">&#9776; Menu</div>
+            </div>
+            <div class="menu" id="mobile-menu">
+                
+                    <a class="menu-item" href="/archives">Posts</a>
+                
+                    <a class="menu-item" href="/category">Categories</a>
+                
+                    <a class="menu-item" href="/tag">Tags</a>
+                
+                    <a class="menu-item" href="/about">About</a>
+                
+            </div>
+        </div>
+    </nav>
+
+</header>
+<script>
+    var mobileBtn = function f() {
+        var toggleMenu = document.getElementsByClassName("menu-toggle")[0];
+        var mobileMenu = document.getElementById("mobile-menu");
+        if(toggleMenu.classList.contains("active")){
+           toggleMenu.classList.remove("active")
+            mobileMenu.classList.remove("active")
+        }else{
+            toggleMenu.classList.add("active")
+            mobileMenu.classList.add("active")
+        }
+    }
+</script>
+            <div class="main">
+                <div class="container">
+    
+    
+        <div class="post-toc">
+    <div class="tocbot-list">
+    </div>
+    <div class="tocbot-list-menu">
+        <a class="tocbot-toc-expand" onclick="expand_toc()">Expand all</a>
+        <a onclick="go_top()">Back to top</a>
+        <a onclick="go_bottom()">Go to bottom</a>
+    </div>
+</div>
+
+<script>
+    var tocbot_timer;
+    var DEPTH_MAX = 6; // 为 6 时展开所有
+    var tocbot_default_config = {
+        tocSelector: '.tocbot-list',
+        contentSelector: '.post-content',
+        headingSelector: 'h1, h2, h3, h4, h5',
+        orderedList: false,
+        scrollSmooth: true,
+        onClick: extend_click,
+    };
+
+    function extend_click() {
+        clearTimeout(tocbot_timer);
+        tocbot_timer = setTimeout(function() {
+            tocbot.refresh(obj_merge(tocbot_default_config, {
+                hasInnerContainers: true
+            }));
+        }, 420); // 这个值是由 tocbot 源码里定义的 scrollSmoothDuration 得来的
+    }
+
+    document.ready(function() {
+        tocbot.init(obj_merge(tocbot_default_config, {
+            collapseDepth: 1
+        }));
+    });
+
+    function expand_toc() {
+        var b = document.querySelector('.tocbot-toc-expand');
+        var expanded = b.getAttribute('data-expanded');
+        expanded ? b.removeAttribute('data-expanded') : b.setAttribute('data-expanded', true);
+        tocbot.refresh(obj_merge(tocbot_default_config, {
+            collapseDepth: expanded ? 1 : DEPTH_MAX
+        }));
+        b.innerText = expanded ? 'Expand all' : 'Collapse all';
+    }
+
+    function go_top() {
+        window.scrollTo(0, 0);
+    }
+
+    function go_bottom() {
+        window.scrollTo(0, document.body.scrollHeight);
+    }
+
+    function obj_merge(target, source) {
+        for (var item in source) {
+            if (source.hasOwnProperty(item)) {
+                target[item] = source[item];
+            }
+        }
+        return target;
+    }
+</script>
+    
+
+    
+    <article class="post-wrap">
+        <header class="post-header">
+            <h1 class="post-title">香港历史博物馆游记</h1>
+            
+                <div class="post-meta">
+                    
+                        Author: <a itemprop="author" rel="author" href="/">Wilkin Lim</a>
+                    
+
+                    
+                        <span class="post-time">
+                        Date: <a href="#">2020-01-23&nbsp;&nbsp;20:52:35</a>
+                        </span>
+                    
+                    
+                        <span class="post-category">
+                    Category:
+                            
+                                <a href="/categories/%E7%94%9F%E6%B4%BB/">生活</a>
+                            
+                        </span>
+                    
+                </div>
+            
+        </header>
+
+        <div class="post-content">
+            <blockquote>
+<p>真的会变成什么，只有上帝知道。……挫折、没有发展、原地踏步、回到错误的岔路口，这会勾起人们的思乡之情。<br>——[奥地利]罗伯特.穆齐尔《没有个性的人》    </p>
+</blockquote>
+<h1 id="缘起"><a href="#缘起" class="headerlink" title="缘起"></a>缘起</h1><p>&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;不知道是不是所有孩子都喜欢各种传奇故事，至少对小时候的我来说，不管是真实的人物，还是幻想的角色，他们扣人心弦的故事都会吸引着我，以至于我常常会幻想自己是故事地主角，也可以经历那样的冒险。那时的我对紧张刺激的小说情节和宏大壮阔的历史叙述都充满了热情。    </p>
+<p>&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;在九岁左右，我不仅翻看各种漫画故事，还通过同学读到了三国演义，继而是秦始皇、汉武帝，乃至拿破仑、二战等的中外历史，至此对那时的我而言，那些波澜壮阔的历史都是伟大人物的故事。     </p>
+<p>&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;一直到高中，我才第一次接触到关于社会生活、风俗文化的历史，不过历史课本上枯燥乏味的描述完全让人提不起些许兴趣，可以想象对于一个荷尔蒙爆炸的少年来讲，他需要的是征服星辰和宇宙，而不是抽大麻的清末病夫和裹脚布的灰瘦老妪，所以在很长一段时间里，清末民国、甚至社会生活的历史对我而言都是无聊扫兴的代名词。       </p>
+<p>&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;直到大学时一个很偶然机会，我被我妈差遣去香港看望我姑姑，又因为表哥们都有事要忙，而我也不想被家人看管着，于是就自己跑出去玩了。而这也是我第一次感受到社会风俗的有趣，因为我参观了香港的历史博物馆，说实话，我也去过其他博物馆，但是这次却是感触最深的，或许是自己不急于赶时间，可以慢慢品味的缘故。     </p>
+<p>&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;博物馆展区主要按自然生态环境、史前先民、历史沿革、近现代历史和香港民俗等主题展开的。由于时间很充裕，所以我很仔细地看了几乎每个展区、展品和介绍，随着博物馆的叙述从地质时期开始，跟着这土地一起经历亿万年的变迁，直到你突然发现故事里讲的不再是距离你很遥远的大人物，而是你生活的日常，是过节做戏、是拜神祭祖、是小时候在祖屋里看到的木制农具，那一刻真的很亲切，随后到现代展区时，小时候用过的热水壶、妈妈的缝纫机、爸爸的大音箱，还有旧时的音乐和香港电影，你就发现这不是汉武帝的故事，也不是拿破仑的故事，这是你的故事，这是我的故事。       </p>
+<p>&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;那时我才意识到我不是独立在历史之外的看客，而是这出历史大戏里的一员，我想知道我要怎么去定义自己和自己的人生。</p>
+<h1 id="祖先"><a href="#祖先" class="headerlink" title="祖先"></a>祖先</h1><p>&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;小孩子应该都很喜欢听故事，城市的小朋友我不太了解，但农村的小朋友最初听到的关于祖先的故事可能是在某个夏天停电的夜晚，那很可能是二十世纪末或者二十一世纪初的某个夜晚，因为越是靠近现在好像就越难停电，那时家中长辈会搬出长条板凳，一家人坐在家门前的小巷纳凉聊天，小朋友在周围瞎玩，要是跑热了或无聊了，可能就会赖到妈妈怀里闹别扭，抱怨为什么还没电，这时要是没被妈妈打一顿，那可能是因为爷爷说要来讲古，小朋友就对闹别扭没了兴趣。      </p>
+<p>&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;但是爷爷的这些故事很多时候是一些没头没尾不知道时间地点的故事片段，很难说清它们的起源，也不知道是不是都是祖先的。不过很奇怪，最初的故事是比较清晰的，虽然那是七百多年前的事。         </p>
+<p>&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;那时是南宋末年，蒙古入侵，临安沦陷，文天祥兵败被俘，张世杰战船沉没，最终陆秀夫负帝跳海，崖山日落，南宋灭亡。我的祖先就是南宋的遗民，打不过蒙古人，又耻于投降，也为了避难，于是一路从福建跑到潮汕，没有以身殉国的壮烈，只是苟全性命于乱世，最后在潮汕定居避世。        </p>
+<p>&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;后来的故事就开始模糊了，可以知道他的子孙在他定居的地方繁衍生息，发展壮大，慢慢地在清朝中期成为了庇佑周围地方的一股宗族势力，连官府都忌惮三分，不过再后来这势力就引起了清朝官府的围剿，慢慢被瓦解掉了。到了晚清时期，外国列强侵入，清朝腐败无能，这里官府无能、宗族无力，于是境内盗贼四起，民不聊生，许多走投无路的贫苦人家离乡背井，肩背市篮，身着单衣，一条水布走南洋，而在这群人里就有我的高祖父。            </p>
+<h1 id="家庭"><a href="#家庭" class="headerlink" title="家庭"></a>家庭</h1><h1 id="孩提"><a href="#孩提" class="headerlink" title="孩提"></a>孩提</h1>
+        </div>
+
+        
+            <section class="post-copyright">
+                
+                    <p class="copyright-item">
+                        <span>Author:</span>
+                        <span>Wilkin Lim</span>
+                    </p>
+                
+                
+                    <p class="copyright-item">
+                        <span>Permalink:</span>
+                        <span><a href="https://yingchinlin.github.io/2020/01/23/Travel%20Notes-Hong%20Kong%20Museum%20of%20History/">https://yingchinlin.github.io/2020/01/23/Travel%20Notes-Hong%20Kong%20Museum%20of%20History/</a></span>
+                    </p>
+                
+                
+                    <p class="copyright-item">
+                        <span>License:</span>
+                        <span>Copyright (c) 2019 <a target="_blank" rel="noopener" href="http://creativecommons.org/licenses/by-nc/4.0/">CC-BY-NC-4.0</a> LICENSE</span>
+                    </p>
+                
+                
+                     <p class="copyright-item">
+                         <span>Slogan:</span>
+                         <span>You are the light of the world. A city that is set on a hill cannot be hidden.</span>
+                     </p>
+                
+
+            </section>
+        
+        <section class="post-tags">
+            <div>
+                <span>Tag(s):</span>
+                <span class="tag">
+                    
+                    
+                        <a href="/tags/%E9%9A%8F%E7%AC%94/"># 随笔</a>
+                    
+                        <a href="/tags/%E6%B8%B8%E8%AE%B0/"># 游记</a>
+                    
+                        
+                </span>
+            </div>
+            <div>
+                <a href="javascript:window.history.back();">back</a>
+                <span>· </span>
+                <a href="/">home</a>
+            </div>
+        </section>
+        <section class="post-nav">
+            
+                <a class="prev" rel="prev" href="/2020/08/05/07%E8%B0%88%E8%B0%88%E5%B5%87%E5%BA%B7%E9%98%AE%E7%B1%8D%E4%BB%AC/">谈谈嵇康阮籍们</a>
+            
+            
+            <a class="next" rel="next" href="/2019/12/13/2019-12-13MarkdownGrammarBriefNotes/">Markdown语法简要笔记</a>
+            
+        </section>
+
+
+    </article>
+</div>
+
+            </div>
+            <footer id="footer" class="footer">
+    <div class="copyright">
+        <span>© Wilkin Lim | Powered by <a href="https://hexo.io" target="_blank">Hexo</a> & <a href="https://github.com/Siricee/hexo-theme-Chic" target="_blank">Chic</a></span>
+    </div>
+</footer>
+
+    </div>
+</body>
+
+</html>
