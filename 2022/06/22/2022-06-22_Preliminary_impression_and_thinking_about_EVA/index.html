@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="zh_cn">
+
+<head>
+    <meta charset="UTF-8">
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <meta name="author" content="Wilkin Lim">
+
+
+
+    <meta name="description" content="https://yingchinlin.github.io">
+
+
+
+<title>关于EVA的初步印象和思考 | WilkinLim&#39;s Blog</title>
+
+
+
+    <link rel="icon" href="/myfavicon.png">
+
+
+
+
+    <!-- stylesheets list from _config.yml -->
+    
+    <link rel="stylesheet" href="/css/style.css">
+    
+
+
+
+    <!-- scripts list from _config.yml -->
+    
+    <script src="/js/script.js"></script>
+    
+    <script src="/js/tocbot.min.js"></script>
+    
+
+
+
+    
+    
+        
+    
+
+
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body>
+    <script>
+        // this function is used to check current theme before page loaded.
+        (() => {
+            const currentTheme = window.localStorage && window.localStorage.getItem('theme') || '';
+            const isDark = currentTheme === 'dark';
+            const pagebody = document.getElementsByTagName('body')[0]
+            if (isDark) {
+                pagebody.classList.add('dark-theme');
+                // mobile
+                document.getElementById("mobile-toggle-theme").innerText = "· Dark"
+            } else {
+                pagebody.classList.remove('dark-theme');
+                // mobile
+                document.getElementById("mobile-toggle-theme").innerText = "· Light"
+            }
+        })();
+    </script>
+
+    <div class="wrapper">
+        <header>
+    <nav class="navbar">
+        <div class="container">
+            <div class="navbar-header header-logo"><a href="/">Wilkin Lim&#39;s Blog</a></div>
+            <div class="menu navbar-right">
+                
+                    <a class="menu-item" href="/archives">Posts</a>
+                
+                    <a class="menu-item" href="/category">Categories</a>
+                
+                    <a class="menu-item" href="/tag">Tags</a>
+                
+                    <a class="menu-item" href="/about">About</a>
+                
+                <input id="switch_default" type="checkbox" class="switch_default">
+                <label for="switch_default" class="toggleBtn"></label>
+            </div>
+        </div>
+    </nav>
+
+    
+    <nav class="navbar-mobile" id="nav-mobile">
+        <div class="container">
+            <div class="navbar-header">
+                <div>
+                    <a href="/">Wilkin Lim&#39;s Blog</a><a id="mobile-toggle-theme">·&nbsp;Light</a>
+                </div>
+                <div class="menu-toggle" onclick="mobileBtn()">&#9776; Menu</div>
+            </div>
+            <div class="menu" id="mobile-menu">
+                
+                    <a class="menu-item" href="/archives">Posts</a>
+                
+                    <a class="menu-item" href="/category">Categories</a>
+                
+                    <a class="menu-item" href="/tag">Tags</a>
+                
+                    <a class="menu-item" href="/about">About</a>
+                
+            </div>
+        </div>
+    </nav>
+
+</header>
+<script>
+    var mobileBtn = function f() {
+        var toggleMenu = document.getElementsByClassName("menu-toggle")[0];
+        var mobileMenu = document.getElementById("mobile-menu");
+        if(toggleMenu.classList.contains("active")){
+           toggleMenu.classList.remove("active")
+            mobileMenu.classList.remove("active")
+        }else{
+            toggleMenu.classList.add("active")
+            mobileMenu.classList.add("active")
+        }
+    }
+</script>
+            <div class="main">
+                <div class="container">
+    
+    
+        <div class="post-toc">
+    <div class="tocbot-list">
+    </div>
+    <div class="tocbot-list-menu">
+        <a class="tocbot-toc-expand" onclick="expand_toc()">Expand all</a>
+        <a onclick="go_top()">Back to top</a>
+        <a onclick="go_bottom()">Go to bottom</a>
+    </div>
+</div>
+
+<script>
+    var tocbot_timer;
+    var DEPTH_MAX = 6; // 为 6 时展开所有
+    var tocbot_default_config = {
+        tocSelector: '.tocbot-list',
+        contentSelector: '.post-content',
+        headingSelector: 'h1, h2, h3, h4, h5',
+        orderedList: false,
+        scrollSmooth: true,
+        onClick: extend_click,
+    };
+
+    function extend_click() {
+        clearTimeout(tocbot_timer);
+        tocbot_timer = setTimeout(function() {
+            tocbot.refresh(obj_merge(tocbot_default_config, {
+                hasInnerContainers: true
+            }));
+        }, 420); // 这个值是由 tocbot 源码里定义的 scrollSmoothDuration 得来的
+    }
+
+    document.ready(function() {
+        tocbot.init(obj_merge(tocbot_default_config, {
+            collapseDepth: 1
+        }));
+    });
+
+    function expand_toc() {
+        var b = document.querySelector('.tocbot-toc-expand');
+        var expanded = b.getAttribute('data-expanded');
+        expanded ? b.removeAttribute('data-expanded') : b.setAttribute('data-expanded', true);
+        tocbot.refresh(obj_merge(tocbot_default_config, {
+            collapseDepth: expanded ? 1 : DEPTH_MAX
+        }));
+        b.innerText = expanded ? 'Expand all' : 'Collapse all';
+    }
+
+    function go_top() {
+        window.scrollTo(0, 0);
+    }
+
+    function go_bottom() {
+        window.scrollTo(0, document.body.scrollHeight);
+    }
+
+    function obj_merge(target, source) {
+        for (var item in source) {
+            if (source.hasOwnProperty(item)) {
+                target[item] = source[item];
+            }
+        }
+        return target;
+    }
+</script>
+    
+
+    
+    <article class="post-wrap">
+        <header class="post-header">
+            <h1 class="post-title">关于EVA的初步印象和思考</h1>
+            
+                <div class="post-meta">
+                    
+                        Author: <a itemprop="author" rel="author" href="/">Wilkin Lim</a>
+                    
+
+                    
+                        <span class="post-time">
+                        Date: <a href="#">2022-06-22&nbsp;&nbsp;00:00:00</a>
+                        </span>
+                    
+                    
+                        <span class="post-category">
+                    Category:
+                            
+                                <a href="/categories/%E7%94%9F%E6%B4%BB/">生活</a>
+                            
+                        </span>
+                    
+                </div>
+            
+        </header>
+
+        <div class="post-content">
+            <blockquote>
+<p>Please note that this article was organized on 2022-06-22 and last modified on 2022-06-22, some of the information may be out of date.</p>
+</blockquote>
+<p>刚刚补完了EVA，一直到最后两集的集中叙述，才知道为什么会有很多人会吹EVA。需要说明的是，最后两集的表现手法和形式，对于部分需要刺激的人来说应该是非常无聊，所以想补番的要慎重。</p>
+<p>到目前我还没看其他人怎么解读这番，所以在这里记下我的初步印象和思考。</p>
+<h2 id="以下文字或涉动画相关内容慎看"><a href="#以下文字或涉动画相关内容慎看" class="headerlink" title="以下文字或涉动画相关内容慎看"></a>以下文字或涉动画相关内容慎看</h2><div class="image-box">
+                <img src="https://yingchinlin.github.io/img/2022-06-22-001.jpg" alt="Promotional Poster of Neon Genesis Evangelion" title="" class="">
+                <p class="image-box-title">Promotional Poster of Neon Genesis Evangelion</p>
+            </div>
+
+
+<p>第一次知道EVA是在高中，那时是在网上看帖子了解到的，大概是对EVA的各种分析和吹捧，不过时间太久都忘了，脑子里大概就一个词：初代神番。不过这种词很容易让人在看后产生落差感。</p>
+<p>现在的我看EVA，心理和年龄虽然已有些太老了，但性格上还是合适的。</p>
+<p>在我庸俗的理解范围内，EVA巧妙地构建了一个结合神话与科技的世界观，并在这个框架内对其核心问题给出解决方案。其中，EVA试图解决的问题就是：我们要如何成为完整的人。</p>
+<p>这番主要通过主角碇真嗣来举例说明这个过程的，当然也借由与碇真嗣互动牵引出另外三个次重要角色：葛城美里、明日香、凌波零。通过这几个重点人物的不同性格、背景、经历，来表现：人如何一步步变为不完整的人。在这里，萨特和弗洛伊德的影子挺重，比如几个女主都多少有些恋父情结，还有他们的欲望是如何受到压抑的，而最后两章萨特也较明显，我们要认识到世界虽然在限制着我们，但是我们依旧保有选择的权利，我们仍然可以有不一样的生活。在EVA里，主角们都受制于自己思想的牢笼，在被外部压抑之后，就无法自行挣脱，直到补完计划的执行，像碇真嗣才发现有另一种可能，挣脱了思想的牢笼。</p>
+<p>不过就这点而言，感觉EVA还是太鸡贼了，把现实替换成了另一个神话科技的世界，然后把问题倒回到最初的起点，然后给我们，特别是小朋友们，构筑了一个梦幻又残酷的童话世界。事实上，现实世界里的我们就是一个逐渐失去可能性的过程，过去无法改变，未来选择有限，重置成本太高。是的，我现在就是被压抑的，思想上的牢笼，或许是自我设限，或许又都是这世界的错。难搞，说回EVA。EVA里涉及很多宗教的元素，特别是基督教神话。在基督神话里，我们最耳熟能详的就是上帝造人。上帝创造了亚当，接着用亚当的肋骨造了夏娃，私以为这隐喻了人的不完整。而在EVA里，使徒分化为众生，每个个体都是残缺的，然后碇司令又以一个逆过程，通过执行人类补完计划，让人类通过补完回到最初的完整状态。</p>
+<p>所以可以看到EVA是怎么回答人要怎么成为完整的人？执行人类补完计划，理解最后一集里碇真嗣补完里说的话，具体结合自身情况去做。所以，我是真的不懂。</p>
+<div class="image-box">
+                <img src="https://yingchinlin.github.io/img/2022-06-22-002.jpg" alt="Asuka Langley Soryu o(〃’▽’〃)o" title="" class="">
+                <p class="image-box-title">Asuka Langley Soryu o(〃’▽’〃)o</p>
+            </div>
+
+
+<p>PS：以上就是我刚刚看完EVA后躺床上码的一个初步印象和思考，乱七八糟的，肯定说了不少会让资深EVA粉笑掉大牙的话，另外也许有的EVA粉会以为我看轻EVA，但其实不是的，主要是我错过了看EVA的年纪，感动就少了很多。平心而论，EVA在主题、剧情、作画、配乐、剪辑、表现手法等方面都可以说是非常优秀，可以秒掉今天一大批所谓某月神番。庵野秀明确实牛。另外，我要去看看其他人是怎么解读分析EVA的了。下次见hhh。</p>
+<h2 id="首发链接"><a href="#首发链接" class="headerlink" title="首发链接"></a>首发链接</h2><p>[1] 小麦.<a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s?__biz=MzkwOTAxMjA1Mg==&mid=2247483874&idx=1&sn=afd3d6cbe8de4627309c19c426ad5abe&chksm=c0c07cd9f7b7f5cfa5ad65c2e4527d03867ae3e93bc1cae2d1e0396ffca7abf1d68aee4eaa21&token=523500309&lang=zh_CN#rd">补番日常|关于EVA的初步印象和思考</a>[EB&#x2F;OL].钟摆小麦.(2022-06-22)[2022-09-15]</p>
+
+        </div>
+
+        
+            <section class="post-copyright">
+                
+                    <p class="copyright-item">
+                        <span>Author:</span>
+                        <span>Wilkin Lim</span>
+                    </p>
+                
+                
+                    <p class="copyright-item">
+                        <span>Permalink:</span>
+                        <span><a href="https://yingchinlin.github.io/2022/06/22/2022-06-22_Preliminary_impression_and_thinking_about_EVA/">https://yingchinlin.github.io/2022/06/22/2022-06-22_Preliminary_impression_and_thinking_about_EVA/</a></span>
+                    </p>
+                
+                
+                    <p class="copyright-item">
+                        <span>License:</span>
+                        <span>Copyright (c) 2019 <a target="_blank" rel="noopener" href="http://creativecommons.org/licenses/by-nc/4.0/">CC-BY-NC-4.0</a> LICENSE</span>
+                    </p>
+                
+                
+
+            </section>
+        
+        <section class="post-tags">
+            <div>
+                <span>Tag(s):</span>
+                <span class="tag">
+                    
+                    
+                        <a href="/tags/%E9%9A%8F%E7%AC%94/"># 随笔</a>
+                    
+                        <a href="/tags/%E5%8A%A8%E6%BC%AB/"># 动漫</a>
+                    
+                        
+                </span>
+            </div>
+            <div>
+                <a href="javascript:window.history.back();">back</a>
+                <span>· </span>
+                <a href="/">home</a>
+            </div>
+        </section>
+        <section class="post-nav">
+            
+                <a class="prev" rel="prev" href="/2022/08/28/2022-08-28_Essay/">Essay 2022-08-28</a>
+            
+            
+            <a class="next" rel="next" href="/2022/05/20/2022-05-20_Essay/">Essay 2022-05-20</a>
+            
+        </section>
+
+
+    </article>
+</div>
+
+            </div>
+            <footer id="footer" class="footer">
+    <div class="copyright">
+        <span>© Wilkin Lim | Powered by <a href="https://hexo.io" target="_blank">Hexo</a> & <a href="https://github.com/Siricee/hexo-theme-Chic" target="_blank">Chic</a></span>
+    </div>
+</footer>
+
+    </div>
+</body>
+
+</html>
