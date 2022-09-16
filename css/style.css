@@ -471,7 +471,7 @@ input[type="radio"]:not(:checked) + label:after {
 
 @font-face {
   font-family: "iconfont"; /* Project id  */
-  src: url('iconfont.ttf?t=1663306417672') format('truetype');
+  src: url('iconfont.ttf?t=1663311524219') format('truetype');
 }
 
 .iconfont {
@@ -482,12 +482,20 @@ input[type="radio"]:not(:checked) + label:after {
   -moz-osx-font-smoothing: grayscale;
 }
 
+.icon-email:before {
+  content: "\e638";
+}
+
 .icon-blogger:before {
   content: "\e6a4";
 }
 
 .icon-tumblr:before {
   content: "\eb27";
+}
+
+.icon-bilibili-fill:before {
+  content: "\e75c";
 }
 
 
