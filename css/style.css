@@ -469,6 +469,28 @@ input[type="radio"]:not(:checked) + label:after {
 }
 
 
+@font-face {
+  font-family: "iconfont"; /* Project id  */
+  src: url('iconfont.ttf?t=1663306417672') format('truetype');
+}
+
+.iconfont {
+  font-family: "iconfont" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-blogger:before {
+  content: "\e6a4";
+}
+
+.icon-tumblr:before {
+  content: "\eb27";
+}
+
+
 .header-logo a {
   padding: 0;
 }
