@@ -18,7 +18,7 @@
 
 
 
-<title>Essay 2022-02-28 | WilkinLim&#39;s Blog</title>
+<title>不成文的碎碎念 | WilkinLim&#39;s Blog</title>
 
 
 
@@ -132,11 +132,76 @@
                 <div class="container">
     
     
+        <div class="post-toc">
+    <div class="tocbot-list">
+    </div>
+    <div class="tocbot-list-menu">
+        <a class="tocbot-toc-expand" onclick="expand_toc()">Expand all</a>
+        <a onclick="go_top()">Back to top</a>
+        <a onclick="go_bottom()">Go to bottom</a>
+    </div>
+</div>
+
+<script>
+    var tocbot_timer;
+    var DEPTH_MAX = 6; // 为 6 时展开所有
+    var tocbot_default_config = {
+        tocSelector: '.tocbot-list',
+        contentSelector: '.post-content',
+        headingSelector: 'h1, h2, h3, h4, h5',
+        orderedList: false,
+        scrollSmooth: true,
+        onClick: extend_click,
+    };
+
+    function extend_click() {
+        clearTimeout(tocbot_timer);
+        tocbot_timer = setTimeout(function() {
+            tocbot.refresh(obj_merge(tocbot_default_config, {
+                hasInnerContainers: true
+            }));
+        }, 420); // 这个值是由 tocbot 源码里定义的 scrollSmoothDuration 得来的
+    }
+
+    document.ready(function() {
+        tocbot.init(obj_merge(tocbot_default_config, {
+            collapseDepth: 1
+        }));
+    });
+
+    function expand_toc() {
+        var b = document.querySelector('.tocbot-toc-expand');
+        var expanded = b.getAttribute('data-expanded');
+        expanded ? b.removeAttribute('data-expanded') : b.setAttribute('data-expanded', true);
+        tocbot.refresh(obj_merge(tocbot_default_config, {
+            collapseDepth: expanded ? 1 : DEPTH_MAX
+        }));
+        b.innerText = expanded ? 'Expand all' : 'Collapse all';
+    }
+
+    function go_top() {
+        window.scrollTo(0, 0);
+    }
+
+    function go_bottom() {
+        window.scrollTo(0, document.body.scrollHeight);
+    }
+
+    function obj_merge(target, source) {
+        for (var item in source) {
+            if (source.hasOwnProperty(item)) {
+                target[item] = source[item];
+            }
+        }
+        return target;
+    }
+</script>
+    
 
     
     <article class="post-wrap">
         <header class="post-header">
-            <h1 class="post-title">Essay 2022-02-28</h1>
+            <h1 class="post-title">不成文的碎碎念</h1>
             
                 <div class="post-meta">
                     
@@ -162,9 +227,9 @@
 
         <div class="post-content">
             <blockquote>
-<p>Please note that this article was organized on 2022-02-28 and last modified on 2022-02-28, some of the information may be out of date.</p>
+<p>搬迁归集QQ空间里的日志。<br>请注意，本文撰写时间及最后修改时间如标题所记录，其中某些信息可能已经过时。</p>
 </blockquote>
-<p>科技公司996，无法感同身受。</p>
+<h2 id="2022-02-28"><a href="#2022-02-28" class="headerlink" title="2022-02-28"></a>2022-02-28</h2><p>科技公司996，无法感同身受。</p>
 <p>难得今天休息，还对着电脑上网，实在很无趣哦。</p>
 <p>看到新闻就烦，从媒体到自媒体都是进亦忧、退亦忧，整天跟个扫把星似的，这愁眉苦脸还<br>能卷上天际，真是专业搞大新闻。</p>
 <p>昨天晚上跑了步，3公里，20分钟，没猝死，谢天谢地。</p>
@@ -175,6 +240,10 @@
 <p>渤海平均深度18米，我震惊了一整个星期二。</p>
 <p>这附近没什么好吃的。</p>
 <p>下雨很久，出太阳了，开心。</p>
+<h2 id="2022-05-20"><a href="#2022-05-20" class="headerlink" title="2022-05-20"></a>2022-05-20</h2><p>早上起来酒店被封了。</p>
+<h2 id="2022-09-12"><a href="#2022-09-12" class="headerlink" title="2022-09-12"></a>2022-09-12</h2><p>When I was a kid, I always wanted to grow up, but when I grew up, I always wanted to go back to my childhood.</p>
+<p>I have been thinking, exploring and answering endlessly about who I am, but none of the answers satisfy me. In my understanding, people are constantly inheriting, absorbing, updating and changing, and for people, what the words point to is always far more than what the words express.</p>
+<p>Obviously, it is some very simple things that can be streamlined, but my company has not made it clear and easy to handle. It can be seen that the management ability of this company is very poor. </p>
 
         </div>
 
@@ -221,7 +290,7 @@
         </section>
         <section class="post-nav">
             
-                <a class="prev" rel="prev" href="/2022/03/21/2022-03-21_Essay/">随笔</a>
+                <a class="prev" rel="prev" href="/2022/03/21/2022-03-21_Essay/">奶奶给我打电话</a>
             
             
             <a class="next" rel="next" href="/2021/10/05/2021-10-05_TravelNotes-ZaoQing_XinHu_Scenic_Area/">星湖边上</a>
