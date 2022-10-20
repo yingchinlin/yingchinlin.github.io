@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="zh_cn">
+
+<head>
+    <meta charset="UTF-8">
+
+<meta name="google-site-verification" content="rpom5QLufP2e-rbvLPIrcsLGm70WlxiApAol-GcE8EM" />
+
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <meta name="author" content="Wilkin Lim">
+
+
+
+    <meta name="description" content="https://yingchinlin.github.io">
+
+
+
+<title>学生、教学及日常思考 | WilkinLim&#39;s Blog</title>
+
+
+
+    <link rel="icon" href="/myfavicon.png">
+
+
+
+
+    <!-- stylesheets list from _config.yml -->
+    
+    <link rel="stylesheet" href="/css/style.css">
+    
+
+
+
+    <!-- scripts list from _config.yml -->
+    
+    <script src="/js/script.js"></script>
+    
+    <script src="/js/tocbot.min.js"></script>
+    
+
+
+
+    
+    
+        
+    
+
+
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body>
+    <script>
+        // this function is used to check current theme before page loaded.
+        (() => {
+            const currentTheme = window.localStorage && window.localStorage.getItem('theme') || '';
+            const isDark = currentTheme === 'dark';
+            const pagebody = document.getElementsByTagName('body')[0]
+            if (isDark) {
+                pagebody.classList.add('dark-theme');
+                // mobile
+                document.getElementById("mobile-toggle-theme").innerText = "· Dark"
+            } else {
+                pagebody.classList.remove('dark-theme');
+                // mobile
+                document.getElementById("mobile-toggle-theme").innerText = "· Light"
+            }
+        })();
+    </script>
+
+    <div class="wrapper">
+        <header>
+    <nav class="navbar">
+        <div class="container">
+            <div class="navbar-header header-logo"><a href="/">Wilkin Lim&#39;s Blog</a></div>
+            <div class="menu navbar-right">
+                
+                    <a class="menu-item" href="/archives">Posts</a>
+                
+                    <a class="menu-item" href="/category">Categories</a>
+                
+                    <a class="menu-item" href="/tag">Tags</a>
+                
+                    <a class="menu-item" href="/about">About</a>
+                
+                <input id="switch_default" type="checkbox" class="switch_default">
+                <label for="switch_default" class="toggleBtn"></label>
+            </div>
+        </div>
+    </nav>
+
+    
+    <nav class="navbar-mobile" id="nav-mobile">
+        <div class="container">
+            <div class="navbar-header">
+                <div>
+                    <a href="/">Wilkin Lim&#39;s Blog</a><a id="mobile-toggle-theme">·&nbsp;Light</a>
+                </div>
+                <div class="menu-toggle" onclick="mobileBtn()">&#9776; Menu</div>
+            </div>
+            <div class="menu" id="mobile-menu">
+                
+                    <a class="menu-item" href="/archives">Posts</a>
+                
+                    <a class="menu-item" href="/category">Categories</a>
+                
+                    <a class="menu-item" href="/tag">Tags</a>
+                
+                    <a class="menu-item" href="/about">About</a>
+                
+            </div>
+        </div>
+    </nav>
+
+</header>
+<script>
+    var mobileBtn = function f() {
+        var toggleMenu = document.getElementsByClassName("menu-toggle")[0];
+        var mobileMenu = document.getElementById("mobile-menu");
+        if(toggleMenu.classList.contains("active")){
+           toggleMenu.classList.remove("active")
+            mobileMenu.classList.remove("active")
+        }else{
+            toggleMenu.classList.add("active")
+            mobileMenu.classList.add("active")
+        }
+    }
+</script>
+            <div class="main">
+                <div class="container">
+    
+    
+        <div class="post-toc">
+    <div class="tocbot-list">
+    </div>
+    <div class="tocbot-list-menu">
+        <a class="tocbot-toc-expand" onclick="expand_toc()">Expand all</a>
+        <a onclick="go_top()">Back to top</a>
+        <a onclick="go_bottom()">Go to bottom</a>
+    </div>
+</div>
+
+<script>
+    var tocbot_timer;
+    var DEPTH_MAX = 6; // 为 6 时展开所有
+    var tocbot_default_config = {
+        tocSelector: '.tocbot-list',
+        contentSelector: '.post-content',
+        headingSelector: 'h1, h2, h3, h4, h5',
+        orderedList: false,
+        scrollSmooth: true,
+        onClick: extend_click,
+    };
+
+    function extend_click() {
+        clearTimeout(tocbot_timer);
+        tocbot_timer = setTimeout(function() {
+            tocbot.refresh(obj_merge(tocbot_default_config, {
+                hasInnerContainers: true
+            }));
+        }, 420); // 这个值是由 tocbot 源码里定义的 scrollSmoothDuration 得来的
+    }
+
+    document.ready(function() {
+        tocbot.init(obj_merge(tocbot_default_config, {
+            collapseDepth: 1
+        }));
+    });
+
+    function expand_toc() {
+        var b = document.querySelector('.tocbot-toc-expand');
+        var expanded = b.getAttribute('data-expanded');
+        expanded ? b.removeAttribute('data-expanded') : b.setAttribute('data-expanded', true);
+        tocbot.refresh(obj_merge(tocbot_default_config, {
+            collapseDepth: expanded ? 1 : DEPTH_MAX
+        }));
+        b.innerText = expanded ? 'Expand all' : 'Collapse all';
+    }
+
+    function go_top() {
+        window.scrollTo(0, 0);
+    }
+
+    function go_bottom() {
+        window.scrollTo(0, document.body.scrollHeight);
+    }
+
+    function obj_merge(target, source) {
+        for (var item in source) {
+            if (source.hasOwnProperty(item)) {
+                target[item] = source[item];
+            }
+        }
+        return target;
+    }
+</script>
+    
+
+    
+    <article class="post-wrap">
+        <header class="post-header">
+            <h1 class="post-title">学生、教学及日常思考</h1>
+            
+                <div class="post-meta">
+                    
+                        Author: <a itemprop="author" rel="author" href="/">Wilkin Lim</a>
+                    
+
+                    
+                        <span class="post-time">
+                        Date: <a href="#">2021-02-06&nbsp;&nbsp;</a>
+                        </span>
+                    
+                    
+                        <span class="post-category">
+                    Category:
+                            
+                                <a href="/categories/%E7%94%9F%E6%B4%BB/">生活</a>
+                            
+                        </span>
+                    
+                </div>
+            
+        </header>
+
+        <div class="post-content">
+            <blockquote>
+<p>记录一些日常教学过程中与学生的互动及教育相关的思考<br>请注意，本文于2021-02-06开始撰写，最后修改于2022-05-02，其中某些信息可能已经过时。</p>
+</blockquote>
+<h2 id="学生"><a href="#学生" class="headerlink" title="学生"></a>学生</h2><p>2月6号的时候给WongGunLik讲勾股定理，他很听得很兴奋、回答很积极，我被他的热情所带动、特别开心，给孩子多讲解了几种勾股定理的证明方法，两个人都非常开心。在讲解过程中，由于太兴奋，结果讲到点对称时忘了怎么推导，我们俩有点懵，愣了一会，平静下来后想起中点坐标公式，这才顺利把过程给孩子推导了，但是两个人兴奋的状态持续着，声音越说越大，一直到课程结束。这可能是我教得最开心的一节课。</p>
+<p>我教过并觉得很费力的学生有不少，其中ZhengKaiQing算是比较典型的。她是一个骨架厚实的女生，理解力比较糟糕，其他科目似乎也是如此。就学习而言，学习效果差，导致信心受挫，进而二者互为因果，循环叠加，让她陷入了恶性循环，更糟糕的是，心理还出现了问题。有时候在课堂上我除了要把原理和步骤拆到底层进行讲解之外，还需要察觉她的情绪和心理的变化，并及时调整课堂节奏。有些进步的小细节让我相信她只是需要时间，但是课堂之外的事情就远远超出老师能处理的范围了，老师的能力和作用是有限的。</p>
+<h2 id="信息茧房"><a href="#信息茧房" class="headerlink" title="信息茧房"></a>信息茧房</h2><p>历史总是留下最具典型的实例，嘲笑人们一再踏入同一条河流。以前以为何不食肉糜这样的事情大概只会发生在晋惠帝这样的人身上。但事实说明并非如此，这样的事还会发生在我学生身上，今天课上休息时和学生聊天，他告诉我他认为中国绝大多数的人都有汽车，并且很多人都开的是奔驰。我惊诧地问他如何得知，他说这是他看到的，并给我讲了他所看到的。这让我产生一个直觉，某种程度上社会已经分裂了，并且很可能已经失去了共识。听到过一种论点，说某件糟糕的事情之所以发生，是因为当事者不是蠢就是坏，从智力和道德两个角度来解释，也不乏道理。我的学生由于阅历有限，说这样的话不是不能理解，但这样的观点，在我看到的智力与道德都不缺乏的常人那里，似乎也不少见。</p>
+<h2 id="应试、竞赛和雕木头"><a href="#应试、竞赛和雕木头" class="headerlink" title="应试、竞赛和雕木头"></a>应试、竞赛和雕木头</h2><p>教育从朴素的直觉讲，就是要教给学生一些有用东西。 从这个角度看，应试培训确实是有用的，因为它确实可以大概率地帮助学生获得更多的分数，虽然我看到有的家庭给孩子投资了数以万计的金钱，但孩子依旧应试考试考得很差，甚至孩子平时根本不学的也有。</p>
+<p>高中时同学很敏锐地察觉到教育存在的问题，他愤怒并直接在作文里向教育制度开炮，但是没有任何变化，甚至他的分数还受了伤。对此，我是佩服的。但故事的最后，他大学毕业很懂事了，和社会相处和谐，对此，我也是佩服的。</p>
+<p>但是现在中国的教育制度就是应试教育，它的目的就是资源分配，优质的教育资源稀缺并且与优质职业、社会地位挂钩。</p>
+<p>想到关于老师的比喻，小时候会把老师比喻为园丁、人类灵魂的工程师，现在成为老师，总觉得这比喻是在描写老师们不遗余力地把自由生长充满生命力的儿童、少年、青年用各种工具裁剪、嫁接、扭曲成为他们脑海中的某种标准造型，可能某些标准还不是老师们心里情愿的。多少有些丧气。</p>
+<h2 id="应试培训的起因、博弈和可能的发展"><a href="#应试培训的起因、博弈和可能的发展" class="headerlink" title="应试培训的起因、博弈和可能的发展"></a>应试培训的起因、博弈和可能的发展</h2><p>2021-02-06提纲（考虑？）</p>
+<p>有时工作之余和IaoGiangGiag、DenSeKai聊天讨论，会说到对目前工作的看法。毫无疑问，这是个畸形的行业，要早点走。</p>
+<p>教培行业的生长基础是高考制度</p>
+<p>高考制度的资源分配作用、高校培养出的学生和产业结构需求的脱节（论文）–腾笼换鸟成功了吗？–产业升级成功了吗？</p>
+<p>高考是教培的起点，由于高考分数高低对学生个人社会资源多寡的分配有极大的影响，绝大多数的家长和学生在没有把握认为自己会输的条件下都会倾尽时间、金钱和精力进行竞赛以博取学生可能高分胜出的机会，只要高考蕴含着资源分配，那么家长、学生的需求就不会消失。</p>
+<p>在这样的条件下，公立学校的老师在教育时长、学生、工资既定的条件下，必然是期望用最少的付出获得</p>
+<p>可能的博弈方</p>
+<p>政府相关部门、高校、公立学校、培训机构、公众、学生</p>
+<p>利益和均衡</p>
+
+        </div>
+
+        
+            <section class="post-copyright">
+                
+                    <p class="copyright-item">
+                        <span>Author:</span>
+                        <span>Wilkin Lim</span>
+                    </p>
+                
+                
+                    <p class="copyright-item">
+                        <span>Permalink:</span>
+                        <span><a href="https://yingchinlin.github.io/2021/02/06/2_Expression_of_Views/2021-02-06_Views/">https://yingchinlin.github.io/2021/02/06/2_Expression_of_Views/2021-02-06_Views/</a></span>
+                    </p>
+                
+                
+                    <p class="copyright-item">
+                        <span>License:</span>
+                        <span>Copyright (c) 2019 <a target="_blank" rel="noopener" href="http://creativecommons.org/licenses/by-nc/4.0/">CC-BY-NC-4.0</a> LICENSE</span>
+                    </p>
+                
+                
+
+            </section>
+        
+        <section class="post-tags">
+            <div>
+                <span>Tag(s):</span>
+                <span class="tag">
+                    
+                    
+                        <a href="/tags/%E9%9A%8F%E7%AC%94/"># 随笔</a>
+                    
+                        <a href="/tags/Views/"># Views</a>
+                    
+                        
+                </span>
+            </div>
+            <div>
+                <a href="javascript:window.history.back();">back</a>
+                <span>· </span>
+                <a href="/">home</a>
+            </div>
+        </section>
+        <section class="post-nav">
+            
+                <a class="prev" rel="prev" href="/2021/10/05/1_Travel_and_News/2021-10-05_Travel-Zaoqing_Xinhu_Scenic_Area/">星湖边上</a>
+            
+            
+            <a class="next" rel="next" href="/2020/11/19/1_Travel_and_News/2020-11-19_News_Friend's_Wedding/">参加朋友婚礼</a>
+            
+        </section>
+
+
+    </article>
+</div>
+
+            </div>
+            <footer id="footer" class="footer">
+    <div class="copyright">
+        <span>© 2019 Wilkin Lim | Powered by <a href="https://hexo.io" target="_blank">Hexo</a> & <a href="https://github.com/Siricee/hexo-theme-Chic" target="_blank">Chic</a>
+
+           <!-- 访客数量(自己添加) -->
+             
+           
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+<span class="site-uv">
+
+ 总访客量:
+
+ <i class="busuanzi-value" id="busuanzi_value_site_uv"></i>
+
+</span>&nbsp;
+
+
+
+
+
+<span class="site-pv">
+
+ | 总访问量:
+
+ <i class="busuanzi-value" id="busuanzi_value_site_pv"></i>
+
+</span>
+
+
+  
+           
+
+        </span>
+    </div>
+</footer>
+
+    </div>
+</body>
+
+</html>

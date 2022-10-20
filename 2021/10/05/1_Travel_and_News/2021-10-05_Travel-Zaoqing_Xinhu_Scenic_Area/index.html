@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="zh_cn">
+
+<head>
+    <meta charset="UTF-8">
+
+<meta name="google-site-verification" content="rpom5QLufP2e-rbvLPIrcsLGm70WlxiApAol-GcE8EM" />
+
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <meta name="author" content="Wilkin Lim">
+
+
+
+    <meta name="description" content="https://yingchinlin.github.io">
+
+
+
+<title>星湖边上 | WilkinLim&#39;s Blog</title>
+
+
+
+    <link rel="icon" href="/myfavicon.png">
+
+
+
+
+    <!-- stylesheets list from _config.yml -->
+    
+    <link rel="stylesheet" href="/css/style.css">
+    
+
+
+
+    <!-- scripts list from _config.yml -->
+    
+    <script src="/js/script.js"></script>
+    
+    <script src="/js/tocbot.min.js"></script>
+    
+
+
+
+    
+    
+        
+    
+
+
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body>
+    <script>
+        // this function is used to check current theme before page loaded.
+        (() => {
+            const currentTheme = window.localStorage && window.localStorage.getItem('theme') || '';
+            const isDark = currentTheme === 'dark';
+            const pagebody = document.getElementsByTagName('body')[0]
+            if (isDark) {
+                pagebody.classList.add('dark-theme');
+                // mobile
+                document.getElementById("mobile-toggle-theme").innerText = "· Dark"
+            } else {
+                pagebody.classList.remove('dark-theme');
+                // mobile
+                document.getElementById("mobile-toggle-theme").innerText = "· Light"
+            }
+        })();
+    </script>
+
+    <div class="wrapper">
+        <header>
+    <nav class="navbar">
+        <div class="container">
+            <div class="navbar-header header-logo"><a href="/">Wilkin Lim&#39;s Blog</a></div>
+            <div class="menu navbar-right">
+                
+                    <a class="menu-item" href="/archives">Posts</a>
+                
+                    <a class="menu-item" href="/category">Categories</a>
+                
+                    <a class="menu-item" href="/tag">Tags</a>
+                
+                    <a class="menu-item" href="/about">About</a>
+                
+                <input id="switch_default" type="checkbox" class="switch_default">
+                <label for="switch_default" class="toggleBtn"></label>
+            </div>
+        </div>
+    </nav>
+
+    
+    <nav class="navbar-mobile" id="nav-mobile">
+        <div class="container">
+            <div class="navbar-header">
+                <div>
+                    <a href="/">Wilkin Lim&#39;s Blog</a><a id="mobile-toggle-theme">·&nbsp;Light</a>
+                </div>
+                <div class="menu-toggle" onclick="mobileBtn()">&#9776; Menu</div>
+            </div>
+            <div class="menu" id="mobile-menu">
+                
+                    <a class="menu-item" href="/archives">Posts</a>
+                
+                    <a class="menu-item" href="/category">Categories</a>
+                
+                    <a class="menu-item" href="/tag">Tags</a>
+                
+                    <a class="menu-item" href="/about">About</a>
+                
+            </div>
+        </div>
+    </nav>
+
+</header>
+<script>
+    var mobileBtn = function f() {
+        var toggleMenu = document.getElementsByClassName("menu-toggle")[0];
+        var mobileMenu = document.getElementById("mobile-menu");
+        if(toggleMenu.classList.contains("active")){
+           toggleMenu.classList.remove("active")
+            mobileMenu.classList.remove("active")
+        }else{
+            toggleMenu.classList.add("active")
+            mobileMenu.classList.add("active")
+        }
+    }
+</script>
+            <div class="main">
+                <div class="container">
+    
+    
+        <div class="post-toc">
+    <div class="tocbot-list">
+    </div>
+    <div class="tocbot-list-menu">
+        <a class="tocbot-toc-expand" onclick="expand_toc()">Expand all</a>
+        <a onclick="go_top()">Back to top</a>
+        <a onclick="go_bottom()">Go to bottom</a>
+    </div>
+</div>
+
+<script>
+    var tocbot_timer;
+    var DEPTH_MAX = 6; // 为 6 时展开所有
+    var tocbot_default_config = {
+        tocSelector: '.tocbot-list',
+        contentSelector: '.post-content',
+        headingSelector: 'h1, h2, h3, h4, h5',
+        orderedList: false,
+        scrollSmooth: true,
+        onClick: extend_click,
+    };
+
+    function extend_click() {
+        clearTimeout(tocbot_timer);
+        tocbot_timer = setTimeout(function() {
+            tocbot.refresh(obj_merge(tocbot_default_config, {
+                hasInnerContainers: true
+            }));
+        }, 420); // 这个值是由 tocbot 源码里定义的 scrollSmoothDuration 得来的
+    }
+
+    document.ready(function() {
+        tocbot.init(obj_merge(tocbot_default_config, {
+            collapseDepth: 1
+        }));
+    });
+
+    function expand_toc() {
+        var b = document.querySelector('.tocbot-toc-expand');
+        var expanded = b.getAttribute('data-expanded');
+        expanded ? b.removeAttribute('data-expanded') : b.setAttribute('data-expanded', true);
+        tocbot.refresh(obj_merge(tocbot_default_config, {
+            collapseDepth: expanded ? 1 : DEPTH_MAX
+        }));
+        b.innerText = expanded ? 'Expand all' : 'Collapse all';
+    }
+
+    function go_top() {
+        window.scrollTo(0, 0);
+    }
+
+    function go_bottom() {
+        window.scrollTo(0, document.body.scrollHeight);
+    }
+
+    function obj_merge(target, source) {
+        for (var item in source) {
+            if (source.hasOwnProperty(item)) {
+                target[item] = source[item];
+            }
+        }
+        return target;
+    }
+</script>
+    
+
+    
+    <article class="post-wrap">
+        <header class="post-header">
+            <h1 class="post-title">星湖边上</h1>
+            
+                <div class="post-meta">
+                    
+                        Author: <a itemprop="author" rel="author" href="/">Wilkin Lim</a>
+                    
+
+                    
+                        <span class="post-time">
+                        Date: <a href="#">2021-10-05&nbsp;&nbsp;</a>
+                        </span>
+                    
+                    
+                        <span class="post-category">
+                    Category:
+                            
+                                <a href="/categories/%E7%94%9F%E6%B4%BB/">生活</a>
+                            
+                        </span>
+                    
+                </div>
+            
+        </header>
+
+        <div class="post-content">
+            <blockquote>
+<p>请注意，本文撰写于2021-10-05，最后修改于2021-10-05，其中某些信息可能已经过时。</p>
+</blockquote>
+<h2 id="游迹"><a href="#游迹" class="headerlink" title="游迹"></a>游迹</h2><p>去肇庆已经是一个月前的事情了，无论是在七星岩星湖边散步，还是去鼎湖山游玩，那种情绪迸发的时刻，我大都已渐渐忘了。如果不是有个没事就催促我动笔的家伙，以我一拖再拖的性格，也许就真这样拖到海枯石烂也说不定。</p>
+<p>游玩之后马上写和间隔如此久的时间再动笔，心境和情感上都有巨大差异，本来我在八月中下旬的某个周末已起了个草稿，但平台一迭代，我那份草稿连同其他一些草稿就不知道哪里去了，不过我并不是很在乎。</p>
+<div class="image-box">
+                <img src="https://yingchinlin.github.io/img/2021-10-05-001.jpg" alt="我很喜欢这种舒服平淡的感觉" title="" class="">
+                <p class="image-box-title">我很喜欢这种舒服平淡的感觉</p>
+            </div>
+
+
+<p>我还挺喜欢肇庆，大概因为我已来过肇庆两次了，不过都是短暂的停留，如飞鸿踏雪般，所以有机会在此处住上一个月也还不错，多多少少能感受下泥雪的凉软。</p>
+<p>住所在星湖东南，距湖很近，工作之余，可以到湖边散步，甚惬意。初来时，看到正北方向的七星岩就兴奋，满打满算定要前往一游，不过终究是没有找到适合的天，以至于到离开肇庆时，心里还为了天柱岩上的小亭感到遗憾，不管是登高望远，抑或凭栏听风，想必都是极为舒畅的。</p>
+<p>但我终究还是在湖边住得很开心。正如前文所讲，我住在星湖边上，星湖很大，中间错落着七星诸岩，诸岩除自然相接外，或以桥沟通，或隔水相望，或借长堤相牵系，这样星湖就被划成几片相连的水域，分别冠以仙女湖、中心湖、波海湖、青莲湖和里湖的名字，而我在这有山有水还有长堤绿道的福地，光是跑步就十分满足了。不过工作还是忙碌且疲累的，我沿湖堤跑步也不过数次而已，更多时候是绕着湖散步，吹吹晚风，看看远山，任清风掠湖扬起粼粼波光，思絮飞散。这生活步调是我喜欢的。</p>
+<p>青莲湖的东岸是岩前村。一系列特色风情民宿清吧如同项链上的珍珠在岸边错落散开，夜晚星空，湖水音乐，一种小布尔乔亚式的浪漫情愫很自然地就从心里溢出。如果能在这儿和漂亮的姑娘一起约会，或者是同一群要好的朋友欢聚，想必这样的回忆在年老时依旧可以翻出来细细回味。</p>
+<div class="image-box">
+                <img src="https://yingchinlin.github.io/img/2021-10-05-002.jpg" alt="星湖沿岸的风情酒吧" title="" class="">
+                <p class="image-box-title">星湖沿岸的风情酒吧</p>
+            </div>
+
+<p>往北过了长街的牌坊，顺着七星岩大桥到对岸再向西折，是里湖边缘的水月长堤。有一晚我跑过这里，那是非常愉快的经历。长堤两侧草树成列，绿道一路向西延伸。东堤有水月岩云，御水依岩的五龙亭似从石室岩两侧腾跃而来嬉戏于湖上的小龙，山色湖影，月朦星稀，呼吸产生的气雾跑出口罩边缘，染白了镜面，又有悠悠乐声从亭那边传来，像是小时候看到的西游记中嫦娥仙子在瑶池起舞的场景，不仅失神放缓，待驻足观看，摘下口罩，水雾散去，才发觉尚在人间。</p>
+<p>若说东堤可能是七星五龙之仙境，那西堤则是另一番长风万里的舒畅。东西堤的分界是一处小广场，也是三堤交会处，往南是平湖幽堤，往西是水月西堤。西堤中是延伸的绿道，沿着绿道跑，向北看依旧可以看到石室、天柱诸岩，但比起水月岩云自然逊色不少。然而，岸堤南侧临水修了长长的栈道，立栈道而南望，是星湖诸湖中面积最大的中心湖，平湖开阔，云天高远，只想放声长啸。</p>
+<p>再说说南面的平湖幽堤，两湖分界，一路绿荫，水月桥就很俏皮，没老老实实待在水月堤上，反而在这里跳出来逗你一下，我跑步到这里时就不得不一步分作两步走，让人回忆起大学时在下沉广场走过的魔鬼步伐。</p>
+<div class="image-box">
+                <img src="https://yingchinlin.github.io/img/2021-10-05-003.jpg" alt="荫梓亭" title="" class="">
+                <p class="image-box-title">荫梓亭</p>
+            </div>
+
+<p>待到了南岸荫梓岗，又是一处分叉，往东沿青莲湖走，可以到星湖湾公园；往西沿中心湖走，则是七星古亭、太阳岛，再往南是牌坊广场，夜晚有喷泉表演，一般而已，不再赘述。值得一提的是，荫梓岗西侧有一亭，歇山式，曰“荫梓亭”，题有楹联一副“对坐评茶消酷暑，停鞭下马寄游踪”，实在是太合我心了。</p>
+<h2 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h2><p>今夏八月，出差端州，寓居星湖，十月补游记。另外，撰文时发现平湖幽堤至牌坊公园西岸，由北向南，布有春夏秋冬四小岛，太阳岛处堤岸交界，将四岛南北均分，春夏居南，秋冬处北，很有意思。此外，太阳岛上的亭子也是依北斗七星命名，造景者还是颇用心呀。</p>
+<h2 id="附图"><a href="#附图" class="headerlink" title="附图"></a>附图</h2><p>照片拍得一般，要是能得意忘象就好了。</p>
+<div class="image-box">
+                <img src="https://yingchinlin.github.io/img/2021-10-05-004.png" alt="星湖日落 有凭栏吊古的感觉" title="" class="">
+                <p class="image-box-title">星湖日落 有凭栏吊古的感觉</p>
+            </div>
+
+<div class="image-box">
+                <img src="https://yingchinlin.github.io/img/2021-10-05-005.jpg" alt="水月岩云 看久了多少会觉得有些俗气" title="" class="">
+                <p class="image-box-title">水月岩云 看久了多少会觉得有些俗气</p>
+            </div>
+
+<div class="image-box">
+                <img src="https://yingchinlin.github.io/img/2021-10-05-006.jpg" alt="能钓鱼 但其实不能钓鱼" title="" class="">
+                <p class="image-box-title">能钓鱼 但其实不能钓鱼</p>
+            </div>
+
+<div class="image-box">
+                <img src="https://yingchinlin.github.io/img/2021-10-05-007.jpg" alt="岸边有许多观鸟者" title="" class="">
+                <p class="image-box-title">岸边有许多观鸟者</p>
+            </div>
+
+<div class="image-box">
+                <img src="https://yingchinlin.github.io/img/2021-10-05-008.jpg" alt="岸边垂柳 想到小学时春夏时节的柳树" title="" class="">
+                <p class="image-box-title">岸边垂柳 想到小学时春夏时节的柳树</p>
+            </div>
+
+
+<h2 id="首发链接"><a href="#首发链接" class="headerlink" title="首发链接"></a>首发链接</h2><p>[1] 林士恒.<a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s?__biz=MzkwOTAxMjA1Mg==&mid=2247483874&idx=1&sn=afd3d6cbe8de4627309c19c426ad5abe&chksm=c0c07cd9f7b7f5cfa5ad65c2e4527d03867ae3e93bc1cae2d1e0396ffca7abf1d68aee4eaa21&token=523500309&lang=zh_CN#rd">星湖边上</a>[EB&#x2F;OL].钟摆小麦.(2021-10-05)[2022-09-15]</p>
+
+        </div>
+
+        
+            <section class="post-copyright">
+                
+                    <p class="copyright-item">
+                        <span>Author:</span>
+                        <span>Wilkin Lim</span>
+                    </p>
+                
+                
+                    <p class="copyright-item">
+                        <span>Permalink:</span>
+                        <span><a href="https://yingchinlin.github.io/2021/10/05/1_Travel_and_News/2021-10-05_Travel-Zaoqing_Xinhu_Scenic_Area/">https://yingchinlin.github.io/2021/10/05/1_Travel_and_News/2021-10-05_Travel-Zaoqing_Xinhu_Scenic_Area/</a></span>
+                    </p>
+                
+                
+                    <p class="copyright-item">
+                        <span>License:</span>
+                        <span>Copyright (c) 2019 <a target="_blank" rel="noopener" href="http://creativecommons.org/licenses/by-nc/4.0/">CC-BY-NC-4.0</a> LICENSE</span>
+                    </p>
+                
+                
+
+            </section>
+        
+        <section class="post-tags">
+            <div>
+                <span>Tag(s):</span>
+                <span class="tag">
+                    
+                    
+                        <a href="/tags/%E6%97%85%E8%A1%8C/"># 旅行</a>
+                    
+                        
+                </span>
+            </div>
+            <div>
+                <a href="javascript:window.history.back();">back</a>
+                <span>· </span>
+                <a href="/">home</a>
+            </div>
+        </section>
+        <section class="post-nav">
+            
+                <a class="prev" rel="prev" href="/2022/02/28/3_Expression_of_Emotions/2022-02-28_Emotions/">不成文的碎碎念</a>
+            
+            
+            <a class="next" rel="next" href="/2021/02/06/2_Expression_of_Views/2021-02-06_Views/">学生、教学及日常思考</a>
+            
+        </section>
+
+
+    </article>
+</div>
+
+            </div>
+            <footer id="footer" class="footer">
+    <div class="copyright">
+        <span>© 2019 Wilkin Lim | Powered by <a href="https://hexo.io" target="_blank">Hexo</a> & <a href="https://github.com/Siricee/hexo-theme-Chic" target="_blank">Chic</a>
+
+           <!-- 访客数量(自己添加) -->
+             
+           
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+<span class="site-uv">
+
+ 总访客量:
+
+ <i class="busuanzi-value" id="busuanzi_value_site_uv"></i>
+
+</span>&nbsp;
+
+
+
+
+
+<span class="site-pv">
+
+ | 总访问量:
+
+ <i class="busuanzi-value" id="busuanzi_value_site_pv"></i>
+
+</span>
+
+
+  
+           
+
+        </span>
+    </div>
+</footer>
+
+    </div>
+</body>
+
+</html>

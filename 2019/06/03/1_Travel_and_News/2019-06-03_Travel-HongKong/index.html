@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="zh_cn">
+
+<head>
+    <meta charset="UTF-8">
+
+<meta name="google-site-verification" content="rpom5QLufP2e-rbvLPIrcsLGm70WlxiApAol-GcE8EM" />
+
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <meta name="author" content="Wilkin Lim">
+
+
+
+    <meta name="description" content="https://yingchinlin.github.io">
+
+
+
+<title>香港之行 | WilkinLim&#39;s Blog</title>
+
+
+
+    <link rel="icon" href="/myfavicon.png">
+
+
+
+
+    <!-- stylesheets list from _config.yml -->
+    
+    <link rel="stylesheet" href="/css/style.css">
+    
+
+
+
+    <!-- scripts list from _config.yml -->
+    
+    <script src="/js/script.js"></script>
+    
+    <script src="/js/tocbot.min.js"></script>
+    
+
+
+
+    
+    
+        
+    
+
+
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body>
+    <script>
+        // this function is used to check current theme before page loaded.
+        (() => {
+            const currentTheme = window.localStorage && window.localStorage.getItem('theme') || '';
+            const isDark = currentTheme === 'dark';
+            const pagebody = document.getElementsByTagName('body')[0]
+            if (isDark) {
+                pagebody.classList.add('dark-theme');
+                // mobile
+                document.getElementById("mobile-toggle-theme").innerText = "· Dark"
+            } else {
+                pagebody.classList.remove('dark-theme');
+                // mobile
+                document.getElementById("mobile-toggle-theme").innerText = "· Light"
+            }
+        })();
+    </script>
+
+    <div class="wrapper">
+        <header>
+    <nav class="navbar">
+        <div class="container">
+            <div class="navbar-header header-logo"><a href="/">Wilkin Lim&#39;s Blog</a></div>
+            <div class="menu navbar-right">
+                
+                    <a class="menu-item" href="/archives">Posts</a>
+                
+                    <a class="menu-item" href="/category">Categories</a>
+                
+                    <a class="menu-item" href="/tag">Tags</a>
+                
+                    <a class="menu-item" href="/about">About</a>
+                
+                <input id="switch_default" type="checkbox" class="switch_default">
+                <label for="switch_default" class="toggleBtn"></label>
+            </div>
+        </div>
+    </nav>
+
+    
+    <nav class="navbar-mobile" id="nav-mobile">
+        <div class="container">
+            <div class="navbar-header">
+                <div>
+                    <a href="/">Wilkin Lim&#39;s Blog</a><a id="mobile-toggle-theme">·&nbsp;Light</a>
+                </div>
+                <div class="menu-toggle" onclick="mobileBtn()">&#9776; Menu</div>
+            </div>
+            <div class="menu" id="mobile-menu">
+                
+                    <a class="menu-item" href="/archives">Posts</a>
+                
+                    <a class="menu-item" href="/category">Categories</a>
+                
+                    <a class="menu-item" href="/tag">Tags</a>
+                
+                    <a class="menu-item" href="/about">About</a>
+                
+            </div>
+        </div>
+    </nav>
+
+</header>
+<script>
+    var mobileBtn = function f() {
+        var toggleMenu = document.getElementsByClassName("menu-toggle")[0];
+        var mobileMenu = document.getElementById("mobile-menu");
+        if(toggleMenu.classList.contains("active")){
+           toggleMenu.classList.remove("active")
+            mobileMenu.classList.remove("active")
+        }else{
+            toggleMenu.classList.add("active")
+            mobileMenu.classList.add("active")
+        }
+    }
+</script>
+            <div class="main">
+                <div class="container">
+    
+    
+        <div class="post-toc">
+    <div class="tocbot-list">
+    </div>
+    <div class="tocbot-list-menu">
+        <a class="tocbot-toc-expand" onclick="expand_toc()">Expand all</a>
+        <a onclick="go_top()">Back to top</a>
+        <a onclick="go_bottom()">Go to bottom</a>
+    </div>
+</div>
+
+<script>
+    var tocbot_timer;
+    var DEPTH_MAX = 6; // 为 6 时展开所有
+    var tocbot_default_config = {
+        tocSelector: '.tocbot-list',
+        contentSelector: '.post-content',
+        headingSelector: 'h1, h2, h3, h4, h5',
+        orderedList: false,
+        scrollSmooth: true,
+        onClick: extend_click,
+    };
+
+    function extend_click() {
+        clearTimeout(tocbot_timer);
+        tocbot_timer = setTimeout(function() {
+            tocbot.refresh(obj_merge(tocbot_default_config, {
+                hasInnerContainers: true
+            }));
+        }, 420); // 这个值是由 tocbot 源码里定义的 scrollSmoothDuration 得来的
+    }
+
+    document.ready(function() {
+        tocbot.init(obj_merge(tocbot_default_config, {
+            collapseDepth: 1
+        }));
+    });
+
+    function expand_toc() {
+        var b = document.querySelector('.tocbot-toc-expand');
+        var expanded = b.getAttribute('data-expanded');
+        expanded ? b.removeAttribute('data-expanded') : b.setAttribute('data-expanded', true);
+        tocbot.refresh(obj_merge(tocbot_default_config, {
+            collapseDepth: expanded ? 1 : DEPTH_MAX
+        }));
+        b.innerText = expanded ? 'Expand all' : 'Collapse all';
+    }
+
+    function go_top() {
+        window.scrollTo(0, 0);
+    }
+
+    function go_bottom() {
+        window.scrollTo(0, document.body.scrollHeight);
+    }
+
+    function obj_merge(target, source) {
+        for (var item in source) {
+            if (source.hasOwnProperty(item)) {
+                target[item] = source[item];
+            }
+        }
+        return target;
+    }
+</script>
+    
+
+    
+    <article class="post-wrap">
+        <header class="post-header">
+            <h1 class="post-title">香港之行</h1>
+            
+                <div class="post-meta">
+                    
+                        Author: <a itemprop="author" rel="author" href="/">Wilkin Lim</a>
+                    
+
+                    
+                        <span class="post-time">
+                        Date: <a href="#">2019-06-03&nbsp;&nbsp;</a>
+                        </span>
+                    
+                    
+                        <span class="post-category">
+                    Category:
+                            
+                                <a href="/categories/%E7%94%9F%E6%B4%BB/">生活</a>
+                            
+                        </span>
+                    
+                </div>
+            
+        </header>
+
+        <div class="post-content">
+            <blockquote>
+<p>请注意，本文撰写于2019-06-03，最后修改于2022-10-19，其中某些信息可能已经过时。</p>
+</blockquote>
+<h2 id="一"><a href="#一" class="headerlink" title="一"></a>一</h2><p>今年四月份的时候去了香港，这是拖了好久的事。大二时，我姑姑就想让我去香港走走，增长见识，可惜，我生性疏懒、又觉得出门要花钱，就一拖再拖，直到现在快毕业了才出发。</p>
+<p>二十六日早上我从广州南出发，搭乘高铁到深圳北，再转地铁到福田站，我姑姑就在地铁出口等我。见面时已是中午，姑姑便带我在地铁口附近的店铺吃了肠粉，稍微垫下肚子，之后便准备经由福田口岸过关，前往香港落马洲。</p>
+<p>关口往来的人不少，经过排队和一些手续后就通关了，老实说，当时走在横跨深圳河的关桥上心里多少有些复杂的感觉，就这样一架横跨深圳河的桥，就是内地和香港的分界。</p>
+<p>看着桥两侧的标语从熟悉的简体字变成了生疏但也能看明白的繁体字，这就是福田到落马洲的距离，这边就是香港了。</p>
+<p>之后，从落马洲到元朗，我随姑姑一起乘坐公交车，巴士上的我，多少有些好奇，左顾右盼，不时看向窗外的景物。从公交车、建筑物、道路设施，再到旁人的服饰、妆容、略有差异的用词以及较为明显的香港口音，我再次确认我到了香港。明显的画风差异，这里是中国，但又和内地有些不同。</p>
+<p>当然，我终于发现我的中国移动没信号了。</p>
+<h2 id="二"><a href="#二" class="headerlink" title="二"></a>二</h2><p>来到香港后的第一天，我从仅容一人睡觉的床上醒来，这是双层床，我睡上铺，大表哥睡下铺，床边就是窗户，而这里是二十四楼，我平躺着侧过头往下俯看，就可以看到楼下的港铁环线，以及铁轨另一侧高耸密集的邨楼，一栋栋、一排排安排有序就像放大版的玉米芯，大楼上齐整的窗户就像摘去玉米粒后剩下的小口。</p>
+<p>昨天下午来的时候，姑丈和几位表哥都在工作，表妹也在上学，于是下午时，我跟着我姑到附近的湿地公园逛逛，透透气，顺便说说家常，我姑姑问了我关于毕业后的打算，老实说，我当时在准备考研，但却没有很强的意愿。我又向姑姑了解了下表哥表妹们的状况，姑姑把家族的期待放在了二表哥身上，看得出她关心表哥表妹们的一切，也有她的考虑和担心。等到晚上姑丈表哥他们下班放学了，大家才都见了面，一起吃完晚饭后，姑姑和姑丈讨论带我去哪里玩，最后决定周六下午带我参加他们教友的聚会，问到表哥表妹时他们这表示去太多次了，并且他们已经有其他安排，就不去了。</p>
+<p>早上起来后，发现姑姑很早就开始准备早餐，做法也很有风格，牛奶、蛋糕、大块的烤猪扒，方便简单营养，和姑姑一家吃了早餐，姑丈临时有事，表哥他们各自去忙既定的安排，我则跟着姑姑去买东西，因为我妈说让我带点东西回去。</p>
+<p>下午时，天气有些转阴雨，但姑妈问了她的朋友，大家都兴致勃勃地表示会去，搭乘西铁到屯门后，又步行了小段距离，就抵达了聚会的沙滩，而抵达海滩时，正好雨就停了。陆陆续续地，参加聚会的朋友都抵达了，环顾一周发现都是叔叔阿姨爷爷奶奶级别的，难怪表哥他们跑得那么快。大家都带了待烧烤的食材和饮料，原来这是姑姑他们每周都会又有的沙滩烧烤聚会，交流信仰的心得，家长理短的闲聊。而我作为这次聚会里仅有的二十多岁的小伙子，就被围着问了不少问题，最后都热情地问我是否会去他们周日的聚会，而我确实对此十分感兴趣。</p>
+<h2 id="三"><a href="#三" class="headerlink" title="三"></a>三</h2><p>周六的海滩滩Barbecue之后，我对于周日的教会之旅就很感兴趣，我真的很好奇聚会的地点是不是在教堂，礼拜又是怎么样的，大家又是如何组织起来的。</p>
+<p>28号周日聚会</p>
+<p>29</p>
+<p>参加教会活动</p>
+<p>从马克思主义的观点看，宗教是人民对痛苦生活的麻醉</p>
+<p>上午和下午都在香港博物馆</p>
+<p>下午跑去了太平山</p>
+<p>晚上在维多利亚港的星光大道</p>
+<p>土包子还真是进入新世界了</p>
+<p>30回来了</p>
+<h2 id="四"><a href="#四" class="headerlink" title="四"></a>四</h2><p>这趟不远的出行让我有很多感慨，一是应该多觉得我的大学生</p>
+
+        </div>
+
+        
+            <section class="post-copyright">
+                
+                    <p class="copyright-item">
+                        <span>Author:</span>
+                        <span>Wilkin Lim</span>
+                    </p>
+                
+                
+                    <p class="copyright-item">
+                        <span>Permalink:</span>
+                        <span><a href="https://yingchinlin.github.io/2019/06/03/1_Travel_and_News/2019-06-03_Travel-HongKong/">https://yingchinlin.github.io/2019/06/03/1_Travel_and_News/2019-06-03_Travel-HongKong/</a></span>
+                    </p>
+                
+                
+                    <p class="copyright-item">
+                        <span>License:</span>
+                        <span>Copyright (c) 2019 <a target="_blank" rel="noopener" href="http://creativecommons.org/licenses/by-nc/4.0/">CC-BY-NC-4.0</a> LICENSE</span>
+                    </p>
+                
+                
+
+            </section>
+        
+        <section class="post-tags">
+            <div>
+                <span>Tag(s):</span>
+                <span class="tag">
+                    
+                    
+                        <a href="/tags/%E6%97%85%E8%A1%8C/"># 旅行</a>
+                    
+                        
+                </span>
+            </div>
+            <div>
+                <a href="javascript:window.history.back();">back</a>
+                <span>· </span>
+                <a href="/">home</a>
+            </div>
+        </section>
+        <section class="post-nav">
+            
+                <a class="prev" rel="prev" href="/2019/12/13/6_Computer_Related/2019-12-13_Notes_Markdown/">Markdown语法简要笔记</a>
+            
+            
+            <a class="next" rel="next" href="/2018/10/16/7_Share/2018-10-16_ShareSomePoemsILike/">两首国外诗歌</a>
+            
+        </section>
+
+
+    </article>
+</div>
+
+            </div>
+            <footer id="footer" class="footer">
+    <div class="copyright">
+        <span>© 2019 Wilkin Lim | Powered by <a href="https://hexo.io" target="_blank">Hexo</a> & <a href="https://github.com/Siricee/hexo-theme-Chic" target="_blank">Chic</a>
+
+           <!-- 访客数量(自己添加) -->
+             
+           
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+<span class="site-uv">
+
+ 总访客量:
+
+ <i class="busuanzi-value" id="busuanzi_value_site_uv"></i>
+
+</span>&nbsp;
+
+
+
+
+
+<span class="site-pv">
+
+ | 总访问量:
+
+ <i class="busuanzi-value" id="busuanzi_value_site_pv"></i>
+
+</span>
+
+
+  
+           
+
+        </span>
+    </div>
+</footer>
+
+    </div>
+</body>
+
+</html>
