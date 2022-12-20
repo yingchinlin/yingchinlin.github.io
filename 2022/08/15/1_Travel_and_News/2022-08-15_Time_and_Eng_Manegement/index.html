@@ -18,7 +18,7 @@
 
 
 
-<title>参加朋友婚礼 | WilkinLim&#39;s Blog</title>
+<title>时间和精力管理 | WilkinLim&#39;s Blog</title>
 
 
 
@@ -132,11 +132,76 @@
                 <div class="container">
     
     
+        <div class="post-toc">
+    <div class="tocbot-list">
+    </div>
+    <div class="tocbot-list-menu">
+        <a class="tocbot-toc-expand" onclick="expand_toc()">Expand all</a>
+        <a onclick="go_top()">Back to top</a>
+        <a onclick="go_bottom()">Go to bottom</a>
+    </div>
+</div>
+
+<script>
+    var tocbot_timer;
+    var DEPTH_MAX = 6; // 为 6 时展开所有
+    var tocbot_default_config = {
+        tocSelector: '.tocbot-list',
+        contentSelector: '.post-content',
+        headingSelector: 'h1, h2, h3, h4, h5',
+        orderedList: false,
+        scrollSmooth: true,
+        onClick: extend_click,
+    };
+
+    function extend_click() {
+        clearTimeout(tocbot_timer);
+        tocbot_timer = setTimeout(function() {
+            tocbot.refresh(obj_merge(tocbot_default_config, {
+                hasInnerContainers: true
+            }));
+        }, 420); // 这个值是由 tocbot 源码里定义的 scrollSmoothDuration 得来的
+    }
+
+    document.ready(function() {
+        tocbot.init(obj_merge(tocbot_default_config, {
+            collapseDepth: 1
+        }));
+    });
+
+    function expand_toc() {
+        var b = document.querySelector('.tocbot-toc-expand');
+        var expanded = b.getAttribute('data-expanded');
+        expanded ? b.removeAttribute('data-expanded') : b.setAttribute('data-expanded', true);
+        tocbot.refresh(obj_merge(tocbot_default_config, {
+            collapseDepth: expanded ? 1 : DEPTH_MAX
+        }));
+        b.innerText = expanded ? 'Expand all' : 'Collapse all';
+    }
+
+    function go_top() {
+        window.scrollTo(0, 0);
+    }
+
+    function go_bottom() {
+        window.scrollTo(0, document.body.scrollHeight);
+    }
+
+    function obj_merge(target, source) {
+        for (var item in source) {
+            if (source.hasOwnProperty(item)) {
+                target[item] = source[item];
+            }
+        }
+        return target;
+    }
+</script>
+    
 
     
     <article class="post-wrap">
         <header class="post-header">
-            <h1 class="post-title">参加朋友婚礼</h1>
+            <h1 class="post-title">时间和精力管理</h1>
             
                 <div class="post-meta">
                     
@@ -145,7 +210,7 @@
 
                     
                         <span class="post-time">
-                        Date: <a href="#">2020-11-19&nbsp;&nbsp;</a>
+                        Date: <a href="#">2022-08-15&nbsp;&nbsp;</a>
                         </span>
                     
                     
@@ -161,19 +226,19 @@
         </header>
 
         <div class="post-content">
-            <p>广东的秋天总是慢一拍的样子，像明明已经十一月十七日了，但气温却还像夏天一般。</p>
-<p>我和朋友们刚参加完朋友GGK的婚宴，正开车准备开始我们几个下半场的聚会，至于新郎官朋友GK则要完成婚礼，不能跟我们几个旧友去玩了。</p>
-<p>说起来也是多亏GK要结婚，我们才得以借此机会相聚。算起来上次聚会也已经是四五年前了，这次虽然人不算齐，但考虑到都参加工作了，有七人见面已经是非常难得的了。不过，新郎官GK要忙婚礼，实际上也脱不开身。</p>
-<p>为了赶上十七日中午的婚宴，我们六个前一晚便在其中一个朋友ZDS家里住下，因为他家离GK家近。不过我和DS还好，都在家乡，不算远，但另外四个朋友或是请假开车回来，或是辗转坐车，则是辛苦麻烦得多了。</p>
-<p>不过，难得一聚，大家兴致颇高。十六日晚上七八点，我和另一位早到的朋友FSJ一起到了ZDS的家里，三人相聚边聊边等其他三人。差不多到十点多，剩下三人LWJ、WRJ、TZD才驱车赶到，我们六人这才一起去吃夜宵。久别重逢、相聚甚喜，自然是天南海北、诸人近况，热络地聊了起来，又有烧烤果腹、美酒助兴，席间很是热闹。待吃完夜宵回到宿处，GK又拿了一瓶酒，虽说要早睡早起去赴婚宴，但还是架不住相聚的欢喜，几人又是席地而坐、饮酒谈心，有聊到社会时事的，有聊到往事回忆的，自然也会由明日的婚宴聊到婚姻恋情。往日里只见朋友们开心有趣的一面，但一直都没想每个人都有每个人各自的烦恼，这实在是让人有些伤感。就这么聊着到两点多，众人才发觉困倦便去睡觉了。</p>
-<p>或许喝了酒比较感性，也可能本来就感性，躺下后是一点没睡，想到各人所说，有些五味杂陈，不免潸然动容。脑子一胡思乱想，更是完全失去了睡意，只能整晚闭着眼养神，直到早上八九点才因困略微睡了小半个钟头。十点多梳洗完毕，便和朋友们开车先去附近的另一个镇上简单吃下早餐，然后就是启程去婚宴，因为GK的村子在这个镇附近。</p>
-<p>说起来这可能算是我第一次来客家地区，不过我还蛮喜欢这地方的。山丘如细波般荡漾起伏，四五米宽的道路像浮贴着水面的丝带，而我们六人则乘着两辆小船穿过耀着秋阳的静谧林海，而新郎官的家就在这自然秀丽的群山之中。</p>
-<p>到了以后，才发现GK的村子是在山谷之中的，山丘环抱，溪流映带，茂林修竹，田舍远山，真的是山水田园的造化。因为看得欣喜，嘴上连连赞叹，DS就打趣我说，这就是你梦想中的田园生活了。一被打趣，我反倒不好意思再说了，不过我想这确实也是一处桃源吧。</p>
-<p>婚宴自然是吃吃喝喝，朋友们健谈会热场，席间自然是欢笑不断。新郎官GK要照顾亲人朋友自然要到处走动忙活，待到他终于有空坐下来，我们几个朋友这才一起跑去做敬酒祝福，这倒是更热闹了。不过因要开车，便把酒换了，但祝福语却是少不了的，并且要四字四字不带重样，什么百年好合、白头偕老，自然是先说便先得，以至后续祝福者一时词穷，只好现场造词，好不热闹。</p>
-<p>待到吃饱喝足，又是拍照存念。欢乐时光总是过得很快，一转眼便到午后，新郎新娘还有敬茶等事要忙，按习俗我们几个就先告辞了。GK拿了回礼给我们，但伯母觉得回礼不够，定要再加，盛情难却，我们几个便在楼门等候。几人站着便聊天，DS看着门上贴的对联，突然转过身来说了句，对啊，结婚最重要的还是要志同道合。我一愣，这才注意到门上横批题着“志同道合”四字。</p>
-<p>确实啊，结婚这等终生大事，固然是考虑很多，但最重要的就是夫妻要志同道合嘛。</p>
-<p>结婚的朋友是GGK，同行的朋友有LWJ、WRJ、ZDS、FSJ、TZD，想见的朋友还有YSF、SJC、LSC、MJM。</p>
-<p><em>撰写于2020-11-19</em></p>
+            <blockquote>
+<p>Please note that this article was organized on 2022-08-15 and last modified on 2022-08-20, some of the information may be out of date.</p>
+</blockquote>
+<h1 id="时间和精力管理"><a href="#时间和精力管理" class="headerlink" title="时间和精力管理"></a>时间和精力管理</h1><p>从经验中得到的两个建议是：</p>
+<p>1、减少手机使用时间：大部分时间是无意义的；</p>
+<p>2、减少博客维护和文档写作的时间：行动永远在记录前，而且不是所有的行动都有记录的必要，以及不要做重复性的工作。</p>
+<p>考虑建立一个分类标准，凡当前时间和精力的划分应当按照这一分类来指定，而不是博客维护这种虚假的努力，避重就轻，同时也要尽量减少手机使用时间，避免无意义的浪费。</p>
+<h1 id="考虑扩展为一个更大的框架"><a href="#考虑扩展为一个更大的框架" class="headerlink" title="考虑扩展为一个更大的框架"></a>考虑扩展为一个更大的框架</h1><p>–财务系统<br>—-满足营养需求下，简化食谱–简化做饭流程–简化食物库存管理<br>—-购物清单</p>
+<hr>
+<p>牢记几条原则：</p>
+<p>1、每天使用手机的时间不应超过5小时；</p>
+<p>2、背单词、练习英文、喝水、健身一定要每天做，以及不要久坐；</p>
+<p>3、不要在白天的工作时间维护博客和写一些不相干的文档。</p>
 
         </div>
 
@@ -188,7 +253,7 @@
                 
                     <p class="copyright-item">
                         <span>Permalink:</span>
-                        <span><a href="https://yingchinlin.github.io/2020/11/19/1_Travel_and_News/2020-11-19_News_Friend's_Wedding/">https://yingchinlin.github.io/2020/11/19/1_Travel_and_News/2020-11-19_News_Friend's_Wedding/</a></span>
+                        <span><a href="https://yingchinlin.github.io/2022/08/15/1_Travel_and_News/2022-08-15_Time_and_Eng_Manegement/">https://yingchinlin.github.io/2022/08/15/1_Travel_and_News/2022-08-15_Time_and_Eng_Manegement/</a></span>
                     </p>
                 
                 
@@ -207,9 +272,7 @@
                 <span class="tag">
                     
                     
-                        <a href="/tags/%E9%9A%8F%E7%AC%94/"># 随笔</a>
-                    
-                        <a href="/tags/%E8%A7%81%E9%97%BB/"># 见闻</a>
+                        <a href="/tags/%E5%8E%9F%E5%88%99/"># 原则</a>
                     
                         
                 </span>
@@ -222,10 +285,10 @@
         </section>
         <section class="post-nav">
             
-                <a class="prev" rel="prev" href="/2021/10/05/1_Travel_and_News/2021-10-05_Travel-Zaoqing_Xinhu_Scenic_Area/">星湖边上</a>
+                <a class="prev" rel="prev" href="/2022/08/28/1_Travel_and_News/2022-08-28_Views/">关于思想信仰等的梳理</a>
             
             
-            <a class="next" rel="next" href="/2020/11/07/1_Travel_and_News/2020-11-03_Travel-120_Acres_of_Fields/">百二丘田游记</a>
+            <a class="next" rel="next" href="/2022/06/22/5_Fun_Stuff/2022-06-22_Preliminary_impression_and_thinking_about_EVA/">关于EVA的初步印象和思考</a>
             
         </section>
 
