@@ -18,7 +18,7 @@
 
 
 
-<title>About Python | WilkinLim&#39;s Blog</title>
+<title>Excel_VBA_快速合并多个工作簿至一个工作簿 | WilkinLim&#39;s Blog</title>
 
 
 
@@ -201,7 +201,7 @@
     
     <article class="post-wrap">
         <header class="post-header">
-            <h1 class="post-title">About Python</h1>
+            <h1 class="post-title">Excel_VBA_快速合并多个工作簿至一个工作簿</h1>
             
                 <div class="post-meta">
                     
@@ -226,17 +226,20 @@
         </header>
 
         <div class="post-content">
-            <blockquote>
-<p>Please note that this article was organized on 2022-10-21 and last modified on 2022-10-21, some of the information may be out of date.</p>
-</blockquote>
-<h1 id="Porgram-simple-code"><a href="#Porgram-simple-code" class="headerlink" title="Porgram simple code"></a>Porgram simple code</h1><p>2 Hours &#x2F; Day</p>
-<p>3 Months</p>
-<h1 id="6-Months"><a href="#6-Months" class="headerlink" title="6 Months"></a>6 Months</h1><p>6 Months</p>
+            <h1 id="Excel-VBA-快速合并多个工作簿至一个工作簿"><a href="#Excel-VBA-快速合并多个工作簿至一个工作簿" class="headerlink" title="Excel_VBA_快速合并多个工作簿至一个工作簿"></a>Excel_VBA_快速合并多个工作簿至一个工作簿</h1><p>日常工作中，可能需要把多个Excel工作簿的内容汇总到一张Excel工作表中。</p>
+<p>通过复制粘贴的方式可行，但会浪费大量时间和人力。</p>
+<p>基于此，可通过VBA的编码的方式方便快捷地进行多个工作簿合并成一个工作表的工作。</p>
+<p>分成两步去操作：</p>
+<p>（1）多个工作簿合并到一个“汇总工作簿”；</p>
+<p>（2）将这个“汇总工作簿”中的工作表进行合并，合并成一个工作表。</p>
+<p><strong>以下是VBA代码：</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">Sub 工作薄间工作表合并()</span><br><span class="line">Dim FileOpen</span><br><span class="line">Dim X As Integer</span><br><span class="line">Application.ScreenUpdating = False</span><br><span class="line">FileOpen = Application.GetOpenFilename(FileFilter:=&quot;Microsoft Excel文件(.xlsx),.xlsx&quot;, MultiSelect:=True, Title:=&quot;合并工作薄&quot;)</span><br><span class="line">X = 1</span><br><span class="line">While X &lt;= UBound(FileOpen)</span><br><span class="line">Workbooks.Open Filename:=FileOpen(X)</span><br><span class="line">Sheets().Move After:=ThisWorkbook.Sheets(ThisWorkbook.Sheets.Count)</span><br><span class="line">X = X + 1</span><br><span class="line">Wend</span><br><span class="line">ExitHandler:</span><br><span class="line">Application.ScreenUpdating = True</span><br><span class="line">Exit Sub</span><br><span class="line">errhadler:</span><br><span class="line">MsgBox Err.Description</span><br><span class="line">End Sub</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+
 <h1 id="References"><a href="#References" class="headerlink" title="References"></a>References</h1><ol>
-<li><p><a target="_blank" rel="noopener" href="https://docs.python.org/zh-cn/3/">Python 3 官方中文文档</a></p>
-</li>
-<li><p><a target="_blank" rel="noopener" href="https://www.runoob.com/python3/python3-tutorial.html">Python 3 教程 | 菜鸟教程</a></p>
-</li>
+<li><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/c8ae6852f1da">Excel—如何快速的合并多个 Excel 工作簿至一个工作簿中的工作表？</a></li>
 </ol>
 
         </div>
@@ -252,7 +255,7 @@
                 
                     <p class="copyright-item">
                         <span>Permalink:</span>
-                        <span><a href="https://yingchinlin.github.io/2022/10/21/6_Computer_Related/2022-10-21_Notes_Python/">https://yingchinlin.github.io/2022/10/21/6_Computer_Related/2022-10-21_Notes_Python/</a></span>
+                        <span><a href="https://yingchinlin.github.io/2022/10/21/4_VBA/2023-05-13_Notes/">https://yingchinlin.github.io/2022/10/21/4_VBA/2023-05-13_Notes/</a></span>
                     </p>
                 
                 
@@ -271,7 +274,9 @@
                 <span class="tag">
                     
                     
-                        <a href="/tags/Python/"># Python</a>
+                        <a href="/tags/Excel/"># Excel</a>
+                    
+                        <a href="/tags/VBA/"># VBA</a>
                     
                         
                 </span>
@@ -284,10 +289,8 @@
         </section>
         <section class="post-nav">
             
-                <a class="prev" rel="prev" href="/2022/10/21/4_VBA/2023-05-13_Notes/">Excel_VBA_快速合并多个工作簿至一个工作簿</a>
             
-            
-            <a class="next" rel="next" href="/2022/10/21/6_Computer_Related/2022-12-13_Notes_1/">浏览器通过file://访问文件和localhost://访问文件的区别</a>
+            <a class="next" rel="next" href="/2022/10/21/6_Computer_Related/2022-10-21_Notes_Python/">About Python</a>
             
         </section>
 
